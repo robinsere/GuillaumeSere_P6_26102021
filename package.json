@@ -1,0 +1,19 @@
+{
+  "name": "guillaumesere_p6_26102021",
+  "version": "1.0.0",
+  "description": "FishEye",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021.git"
+  },
+  "author": "\"Guillaume Sere\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021/issues"
+  },
+  "homepage": "https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021#readme"
+}
