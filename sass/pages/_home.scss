@@ -1,11 +1,93 @@
 /* page d'acceuil */
 
-.photographers-list{
-    display: grid;
-    gap: 30px;
+.main {
+    padding-top: 25px;
+    padding-bottom: 100px;
+
+    .photographers-list {
+        display: grid;
+        gap: 30px;
+
+        .no-photographer {
+            display: none;
+            text-align: center;
+            grid-area: 1 / 1 / 2 / 4;
+        }
+    }
+
+    .photographer-thumbnail {
+        text-align: center;
+
+        .photographer__profil {
+            display: inline-block;
+        }
+
+        .photographer__profil__img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: #dedede;
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+        }
+
+        .photographer__profil__name {
+            font-size: 40px;
+            color: $orange;
+        }
+
+        .photographer__infos {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 10px;
+
+            .photographer__infos__city {
+                color: $red;
+                font-size: 16px;
+            }
+
+            .photographer__infos__tagline {
+                font-size: 12px;
+            }
+
+            .photographer__infos__price {
+                color: $grey;
+                font-size: 12px;
+            }
+        }
+
+        .tag-list {
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 5px;
+            list-style: none;
+
+            .tag-item {
+                display: inline-block;
+                border: 1px solid #c4c4c4;
+                border-radius: 10px;
+                font-size: 12px;
+                color: $red;
+
+                &:hover {
+                    color: $white;
+                    background: $red;
+                }
+
+                a {
+                    display: block;
+                    padding: 2px 7px;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
 
-.direct-link-main{
+.direct-link-main {
     position: fixed;
     top: -35px;
     left: 50%;
@@ -15,29 +97,23 @@
     font-size: 1.125rem;
     font-weight: 500;
     transform: translate3d(-50%, 0, 0);
-    transition: top .3s ease;
+    transition: top 0.3s ease;
     z-index: 100;
 
-    &:focus{
+    &:focus {
         top: 6px;
     }
 }
 
-.no-photographer{
-    display: none;
-    text-align: center;
-    grid-area: 1 / 1 / 2 / 4;
-}
-
-@media screen and (min-width: 768px){
-    .photographers-list{
+@media screen and (min-width: 768px) {
+    .photographers-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 50px 30px;
     }
 }
 
-@media screen and (min-width: 1024px){
-    .photographers-list{
+@media screen and (min-width: 1024px) {
+    .photographers-list {
         grid-template-columns: repeat(3, 1fr);
     }
 }

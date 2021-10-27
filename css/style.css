@@ -47,16 +47,45 @@ a {
 .header h1 {
   font-size: 1rem;
   color: #901C1C;
-  order: 3;
+  order: 2;
 }
 .header nav {
-  order: 2;
+  order: 3;
   margin: 0 auto;
+}
+.header nav .tag-list {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 5px;
+}
+.header nav .tag-list .tag-item {
+  display: inline-block;
+  border: 1px solid #c4c4c4;
+  border-radius: 11px;
+  font-size: 12px;
+  color: #901C1C;
+}
+.header nav .tag-list .tag-item:hover {
+  color: #FFF;
+  background: #901C1C;
+}
+.header nav .tag-list .tag-item a {
+  display: block;
+  padding: 2px 7px;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 976px) {
   .header {
     font-size: 1.75rem;
+  }
+  .header nav {
+    order: 2;
+  }
+  .header h1 {
+    order: 3;
   }
 }
 @media screen and (min-width: 1120px) {
@@ -68,9 +97,77 @@ a {
   }
 }
 /* page d'acceuil */
-.photographers-list {
+.main {
+  padding-top: 25px;
+  padding-bottom: 100px;
+}
+.main .photographers-list {
   display: grid;
   gap: 30px;
+}
+.main .photographers-list .no-photographer {
+  display: none;
+  text-align: center;
+  grid-area: 1/1/2/4;
+}
+.main .photographer-thumbnail {
+  text-align: center;
+}
+.main .photographer-thumbnail .photographer__profil {
+  display: inline-block;
+}
+.main .photographer-thumbnail .photographer__profil__img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #dedede;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
+}
+.main .photographer-thumbnail .photographer__profil__name {
+  font-size: 40px;
+  color: #D3573C;
+}
+.main .photographer-thumbnail .photographer__infos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.main .photographer-thumbnail .photographer__infos .photographer__infos__city {
+  color: #901C1C;
+  font-size: 16px;
+}
+.main .photographer-thumbnail .photographer__infos .photographer__infos__tagline {
+  font-size: 12px;
+}
+.main .photographer-thumbnail .photographer__infos .photographer__infos__price {
+  color: #525252;
+  font-size: 12px;
+}
+.main .photographer-thumbnail .tag-list {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 5px;
+  list-style: none;
+}
+.main .photographer-thumbnail .tag-list .tag-item {
+  display: inline-block;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #901C1C;
+}
+.main .photographer-thumbnail .tag-list .tag-item:hover {
+  color: #FFF;
+  background: #901C1C;
+}
+.main .photographer-thumbnail .tag-list .tag-item a {
+  display: block;
+  padding: 2px 7px;
+  text-transform: capitalize;
+  font-weight: 500;
 }
 
 .direct-link-main {
@@ -88,12 +185,6 @@ a {
 }
 .direct-link-main:focus {
   top: 6px;
-}
-
-.no-photographer {
-  display: none;
-  text-align: center;
-  grid-area: 1/1/2/4;
 }
 
 @media screen and (min-width: 768px) {
