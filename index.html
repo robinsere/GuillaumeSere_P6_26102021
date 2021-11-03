@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <title>FishEye</title>
-    <script src="js/app.js"></script>
-</head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" type="module"></script>
 
+</head>
 <body>
 
     <a href="#main" class="direct-link-main">Passer au contenu</a>
@@ -17,204 +16,26 @@
     <header class="header">
 
         <a class="header__logo" href="index.html">
-            <img src="images/logo-fisheye.svg" alt="FishEye Home page">
+            <img src="medias/logo-fisheye.svg" alt="FishEye Home page">
         </a>
 
         <nav id="categories" class="categories-list">
             <ul id="tags" class="tag-list" aria-label="tags">
-                <li class="tag-item" data-active="false" data-value="portarit" role="button" aria-label="filtre portrait">
-                    <a href="#">#portrait</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="events" role="button" aria-label="filtre events">
-                    <a href="#">#Events</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="travel" role="button" aria-label="filtre travel">
-                    <a href="#">#travel</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="animal" role="button" aria-label="filtre animal">
-                    <a href="#">#animal</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="sport" role="button" aria-label="filtre sport">
-                    <a href="#">#sport</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="architecture" role="button" aria-label="filtre architecture">
-                    <a href="#">#architecture</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="art" role="button" aria-label="filtre art">
-                    <a href="#">#art</a>
-                </li>
-                <li class="tag-item" data-active="false" data-value="fashion" role="button" aria-label="filtre fashion">
-                    <a href="#">#fashion</a>
-                </li>
-
+                <!-- Injection des l'éléments -->
             </ul>
         </nav>
 
         <h1>Nos photographes</h1>
-
     </header>
 
     <main id="main" class="main">
 
         <article id="photographers-list" class="photographers-list">
-
+            <!-- Injection des l'éléments -->
             <p id="no-photographer" class="no-photographer">Aucun photographe ne correspond à vos filtres</p>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img" src="images/photos/Photographers ID Photos/MimiKeel.jpg">
-                    <h2 class="photographer__profil__name">Mimi Keel</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">London, UK</p>
-                    <p class="photographer__infos__tagline">Voir le beau dans le quotidien</p>
-                    <p class="photographer__infos__price">400€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="portrait" role="button" aria-label="filtre portrait">
-                        <a href="#">#Portrait</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="events" role="button" aria-label="filtre events">
-                        <a href="#">#Events</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="travel" role="button" aria-label="filtre travel">
-                        <a href="#">#travel</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="animal" role="button" aria-label="filtre animal">
-                        <a href="#">#animals</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img"
-                        src="images/photos/Photographers ID Photos/EllieRoseWilkens.jpg">
-                    <h2 class="photographer__profil__name">Ellie-Rose Wilkens</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">Paris, France</p>
-                    <p class="photographer__infos__tagline">Capturer des compositions complexes</p>
-                    <p class="photographer__infos__price">250€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="portrait" role="button" aria-label="filtre sport">
-                        <a href="#">#sport</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="architecture" role="button" aria-label="filtre architecture">
-                        <a href="#">#architecture</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img" src="images/photos/Photographers ID Photos/TracyGalindo.jpg">
-                    <h2 class="photographer__profil__name">Tracy Galindo</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">Montreal, Canada</p>
-                    <p class="photographer__infos__tagline">Photographe freelance</p>
-                    <p class="photographer__infos__price">500€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="art" role="button" aria-label="filtre art">
-                        <a href="#">#art</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="fashion" role="button" aria-label="filtre fashion">
-                        <a href="#">#fashion</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="events" role="button" aria-label="filtre events">
-                        <a href="#">#events</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img"
-                        src="images/photos/Photographers ID Photos/NabeelBradford.jpg">
-                    <h2 class="photographer__profil__name">Nabeel Bradford</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">Mexico City, Mexico</p>
-                    <p class="photographer__infos__tagline">Toujours aller de l'avant</p>
-                    <p class="photographer__infos__price">350€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="travel" role="button" aria-label="filtre travel">
-                        <a href="#">#travel</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="portrait" role="button" aria-label="filtre portrait">
-                        <a href="#">#portrait</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img" src="images/photos/Photographers ID Photos/RhodeDubois.jpg">
-                    <h2 class="photographer__profil__name">Rhode Dubois</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">Barcelone, spain</p>
-                    <p class="photographer__infos__tagline">Je crée des souvenirs</p>
-                    <p class="photographer__infos__price">275€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="sport" role="button" aria-label="filtre sport">
-                        <a href="#">#sport</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="fashion" role="button" aria-label="filtre fashion">
-                        <a href="#">#fashion</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="events" role="button" aria-label="filtre events">
-                        <a href="#">#events</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="animal" role="button" aria-label="filtre animal">
-                        <a href="#">#animals</a>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="photographer-thumbnail">
-                <a href="#" class="photographer__profil">
-                    <img class="photographer__profil__img"
-                        src="images/photos/Photographers ID Photos/MarcelNikolic.jpg">
-                    <h2 class="photographer__profil__name">Marcel Nikolic</h2>
-                </a>
-
-                <div class="photographer__infos">
-                    <p class="photographer__infos__city">Berlin, Germany</p>
-                    <p class="photographer__infos__tagline">Toujours à la recherche de LA photo</p>
-                    <p class="photographer__infos__price">300€/jour</p>
-                </div>
-
-                <ul class="tag-list photographer__tags">
-                    <li class="tag-item" data-active="false" data-value="travel" role="button" aria-label="filtre travel">
-                        <a href="#">#travel</a>
-                    </li>
-                    <li class="tag-item" data-active="false" data-value="architecture" role="button" aria-label="filtre architecture">
-                        <a href="#">#architecture</a>
-                    </li>
-                </ul>
-            </article>
-
-
         </article>
+
     </main>
 
-
 </body>
-
 </html>

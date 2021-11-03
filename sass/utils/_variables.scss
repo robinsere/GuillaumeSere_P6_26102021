@@ -1,4 +1,6 @@
-/* définition des variables pour les couleurs */
+// --------------------------------------------------
+// COLOR VARIABLES
+// --------------------------------------------------
 
 $white: #FFF;
 $black: #000;
@@ -7,9 +9,15 @@ $lightGrey: #FAFAFA;
 
 $red: #901C1C;
 $lightRed: #DB8876;
+
 $orange: #D3573C;
 
-$marginMobile: 20px;    
-$marginDesktop: 100px;  
+
+// --------------------------------------------------
+// SIZE VARIABLES
+// --------------------------------------------------
+
+$marginMobile: 20px;    // Left and right window margin for mobile
+$marginDesktop: 100px;  // Left and right window margin for Desktop
  
 $borderRadius: 5px;
