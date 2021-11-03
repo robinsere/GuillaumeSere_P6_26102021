@@ -16,6 +16,6 @@ export default class Error {
      * @param {string} errorMsg 
      */
     static print = (errorMsg) => {
-        main[0].innerHTML = `<div class="msg-error"><p>${errorMsg}</p><a href="index.gtml">Retour à l'accueil</a></div>`
+        main[0].innerHTML = `<div class="msg-error"><p>${errorMsg}</p><a href="index.html">Retour à l'accueil</a></div>`
     }
 }
