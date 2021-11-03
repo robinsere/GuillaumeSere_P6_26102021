@@ -16,6 +16,7 @@ class FishEyeApp {
   initApp() {
     switch(window.location.pathname) {
       case "/index.html":
+        case "/":
         const home = new HomePage(this.datas);
         home.renderHomePage();
       break;
