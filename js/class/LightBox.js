@@ -124,13 +124,13 @@ export default class LightBox {
             media = document.createElement('img')
             media.setAttribute('class', 'media')
             media.setAttribute('alt', this.current.alt)
-            media.src = `imgs/photos/${this.current.photographerId}/` + this.current.img
+            media.src = `medias/${this.current.photographerId}/` + this.current.img
         }else{
             media = document.createElement('video')
             media.setAttribute('class', 'media')
             media.setAttribute('controls', 'true')
 
-            media.innerHTML = `<source src="imgs/photos/${this.current.photographerId}/${this.current.video}" type="video/mp4">`
+            media.innerHTML = `<source src="medias/${this.current.photographerId}/${this.current.video}" type="video/mp4">`
         }
         this.media = media
         return media

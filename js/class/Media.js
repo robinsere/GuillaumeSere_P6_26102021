@@ -158,12 +158,12 @@ export default class Media {
      */
     getThumbnail = () => {
         if (this.img) {
-            return `<img class="media__link__img" src="imgs/photos/${this.photographerId}/${this.img}" alt="${this.title}, vue rapproché">`
+            return `<img class="media__link__img" src="medias/${this.photographerId}/${this.img}" alt="${this.title}, vue rapproché">`
         }
         
         if (this.video){
             return `<video class="media__link__video" aria-label="${this.title}, vue rapproché">
-                        <source src="imgs/photos/${this.photographerId}/${this.video}" type="video/mp4">
+                        <source src="medias/${this.photographerId}/${this.video}" type="video/mp4">
                     </video>`
         }
 

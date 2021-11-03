@@ -93,7 +93,7 @@ export default class Photographer {
         contactBtn.setAttribute('class', 'btn photographer__btn')
         pictureElement.setAttribute('class', 'photographer__img')
         pictureElement.setAttribute('alt', this.name)
-        pictureElement.setAttribute('src', `imgs/photos/Photographers_ID_Photos/${this.portrait}`)
+        pictureElement.setAttribute('src', `medias/portrait/${this.portrait}`)
         
         // Ajout du contenu dans l'élément infos
         infosElement.innerHTML=
