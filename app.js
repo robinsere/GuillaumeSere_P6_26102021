@@ -16,12 +16,12 @@ class FishEyeApp {
  
   initApp() {
     switch(window.location.pathname.split("/").pop()) {
-      case "/index.html":
+      case "index.html":
         case "":
         const home = new HomePage(this.datas);
         home.renderHomePage();
       break;
-      case "/profil.html":
+      case "profil.html":
         const photographer = new Photographer(this.datas);
         photographer.renderPhotographerPage(this.datas);
       break;
