@@ -21,7 +21,7 @@ class FishEyeApp {
         const home = new HomePage(this.datas);
         home.renderHomePage();
       break;
-      case "profil.html":
+      case "/profil.html":
         const photographer = new Photographer(this.datas);
         photographer.renderPhotographerPage(this.datas);
       break;
