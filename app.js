@@ -4,7 +4,7 @@ import Photographer from "./assets/js/photographer.js";
 
 class FishEyeApp {
   constructor() {
-      fetch("./assets/js/data/FishEyeData.json").then(response => response.json())
+      fetch("https://guillaumesere.github.io/GuillaumeSere_P6_26102021/assets/js/data/FishEyeData.json").then(response => response.json())
       .then(datas => {
           this.datas = datas;
           this.initApp()
