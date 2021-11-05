@@ -683,7 +683,7 @@ a {
 
 .direct-link-main {
   position: fixed;
-  top: -35px;
+  top: 15px;
   left: 50%;
   padding: 3px 15px;
   border-radius: 5px;

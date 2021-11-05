@@ -5,7 +5,7 @@ function createListTemplate(tags) {
     tags.forEach(tag => {
         template +=
             `<li class="tag-item" data-active="false" data-value="${tag}" role="button" aria-label="filtre ${tag}">
-            <a href="#">#${tag}</a>
+            <a href="#">${tag}</a>
         </li>`;
     });
     return template;
