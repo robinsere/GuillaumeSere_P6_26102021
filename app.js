@@ -4,12 +4,7 @@ import Photographer from "./assets/js/photographer.js";
 
 class FishEyeApp {
   constructor() {
-      fetch("https://guillaumesere.github.io/GuillaumeSere_P6_26102021/assets/js/data/FishEyeData.json").then(response => response.json())
-      .then(datas => {
-          this.datas = datas;
-          this.initApp()
-      })
-      .catch((error) => console.error("Erreur : " + error));
+     this.fetchJSON();
   }
 
   // Routage selon la page demandée
@@ -17,7 +12,7 @@ class FishEyeApp {
   initApp() {
     switch(window.location.pathname.split("/").pop()) {
       case "index.html":
-        case "":
+          case "" :
         const home = new HomePage(this.datas);
         home.renderHomePage();
       break;
@@ -26,6 +21,15 @@ class FishEyeApp {
         photographer.renderPhotographerPage(this.datas);
       break;
     }
+  }
+
+  fetchJSON(){
+    fetch("https://guillaumesere.github.io/GuillaumeSere_P6_26102021/assets/js/data/FishEyeData.json").then(response => response.json())
+    .then(datas => {
+        this.datas = datas;
+        this.initApp()
+    })
+    .catch((error) => console.error("Erreur : " + error));
   }
 
 }

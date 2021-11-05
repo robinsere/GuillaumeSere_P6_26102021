@@ -1,4 +1,6 @@
 import vueTag from './vueTag.js'
+
+// Renvoi le template de la page d'acceuil
 function createListTemplate(photographers) {
     let template = "";
     photographers.forEach(photographer => {

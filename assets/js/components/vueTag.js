@@ -1,3 +1,5 @@
+// Renvoi la vue des tags
+
 function createListTemplate(tags) {
     let template = "";
     tags.forEach(tag => {

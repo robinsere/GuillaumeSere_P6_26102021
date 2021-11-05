@@ -23,7 +23,7 @@ export default class HomePage {
           const photographersSel = this.datas.photographers.filter(
             (photographer) => photographer.tags.indexOf(tag.dataset.value) !== -1
           );
-          // Liste des profils
+          // Liste des profils filtrés
           photographersListElement.innerHTML = vuePhotographersList.createListTemplate(photographersSel);
         });
       });
