@@ -24,17 +24,206 @@
     </header>
 
     <main class="main">
-        <article id="photographer-profil">
-        </article>
+        <section id="photographer-profil" class="photographer-profil">
+            <div class="photographer__infos">
+                <h1 class="photographer__infos__name">Mimi Keel</h1>
+                <p class="photographer__infos__city">London, UK</p>
+                <p class="photographer__infos__tagline">Voir le beau dans le quotidien</p>
+                <ul class="tag-list" aria-label="tags">
+                    <li class="tag-item" data-active="false" data-value="portrait" role="button" aria-label="filtre portrait, désactivé">
+                        <a href="#">portrait</a>
+                    </li>
+                    <li class="tag-item" data-active="false" data-value="events" role="button" aria-label="filtre portrait, désactivé">
+                        <a href="#">events</a>
+                    </li>
+                    <li class="tag-item" data-active="false" data-value="travel" role="button" aria-label="filtre portrait, désactivé">
+                        <a href="#">travel</a>
+                    </li>
+                    <li class="tag-item" data-active="false" data-value="animals" role="button" aria-label="filtre portrait, désactivé">
+                        <a href="#">animals</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
+            <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/MimiKeel.jpg" alt="Mimi Keel">
+        </section>
 
         <div id="filter">
+            <div class="filter">
+                <span id="filter-label" class="filter__label">Trier par</span>
+                <div id="filter-wrapper" class="filter__wrapper">
+                    <button id="filter-btn" class="btn filter-btn" arira-expended="false" aria-haspopup="listbox" aria-labelledby="filter-label">Popularité</button>
+                    <ul id="filter-list" class="filter-list" role="listbox" aria-activedescendant="popularity" aria-selected="true" aria-labelledby="filter-label">
+                        <li id="Popularité" class="filter-list__item" data-value="popularity" tabindex="0" role="button">Popularité</li>
+                        <li id="Date" class="filter-list__item" data-value="date" tabindex="0" role="button">Date</li>
+                        <li id="Titre" class="filter-list__item" data-value="title" tabindex="0" role="button">Titre</li>
+                    </ul>
+                </div>
+            </div>
         </div> 
 
         <article id="gallery" class="gallery">
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Event_SeasideWedding.jpg" alt="Seaside Wedding">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Seaside Wedding</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">25</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Portrait_Wednesday.jpg" alt="Portrait Wednesday">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Wednesday Portrait</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">34</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Event_PintoWedding.jpg" alt="Boulder Wedding">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Boulder Wedding</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">52</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Portrait_Background.jpg" alt="Raw Black Portrait">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Raw Black Portrait</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">55</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Animals_Rainbow.jpg" alt="Rainbow Bird">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Rainbow Bird</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">59</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi//Portrait_Nora.jpg" alt="Portrait de Nora">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Nora portrait</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">63</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Event_BenevidesWedding.jpg" alt="Benevides Wedding">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Benevides Wedding</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">77</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Travel_HillsideColor.jpg" alt="Hillside color">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Hillside color</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">85</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link">
+                    <img class="media__link__img" src="assets/images/photos/Mimi/Travel_Lonesome.jpg" alt="Lonesome">
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">SLonesome</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">88</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
+            <article class="media">
+                <a href="#" role="button" class="media__link video-overlay">
+                    <video class="media__link__video" aria-label="Wild horse in the mountains">
+                        <source src="assets/images/photos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4" type="video/mp4" >
+                    </video>
+                </a>
+                <footer class="media__infos">
+                    <p class="media__infos__title">Seaside Wedding</p>
+                    <div class="media__infos__likes">
+                        <span class="media__infos__like-nb">25</span>
+                        <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button" tabindex="0"></i>
+                    </div>
+                </footer>
+            </article>
         </article>
     </main>
 
-    <aside id="card-infos">
+    <aside id="card-infos" class="card-infos">
+        <div class="cards-infos__nb-likes">
+            <span id="counter-likes" class="nb-likes">680</span>
+            <i class="fas fa-heart" aria-label="likes"></i>
+        </div>
+        <p>400€ / jour</p>
+    </aside>
+
+    
+    <aside id="modal-lightbox" class="lightbox" tabindex="0" aria-label="Vue rapproché"></aside>
+
+    <aside id="modal-form" class="form-contact" tabindex="0" aria-label="Modal de contact" >
+        <div class="form-contact__container">
+            <h1 id="form-name" class="form-name">Contactez-moi<br></h1>
+            <form id="contact-form" class="form" tabindex="0" aria-label="formulaire de contact">
+                <div class="form__item">
+                    <label for="first-name">Prénom</label>
+                    <input type="text" class="text-control" id="first-name" name="first-name">
+                </div>
+                <div class="form__item">
+                    <label for="last-name">Nom</label>
+                    <input type="text" class="text-control" id="last-name" name="last-name">
+                </div>
+                <div class="form__item">
+                    <label for="email">Email</label>
+                    <input type="email" class="text-control" id="email" name="email">
+                </div>
+                <div class="form__item">
+                    <label for="message">Votre message</label>
+                    <textarea class="text-control" name="message" id="message"></textarea>
+                </div>
+                <button type="submit" id="submitForm" class="btn btn-submit">Envoyer</button>
+            </form>
+            <button id="closeModal" class="close" aria-label="fermer le formulaire">
+            </button>
+        </div>
     </aside>
 
 </body>
