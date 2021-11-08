@@ -25,14 +25,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-
             width: 0;
             height: 0;
-
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent; 
             border-left: 30px solid #fff;          
-            
             transform: translate3d(-50%, -50%, 0);
         }
 

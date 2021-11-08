@@ -20,13 +20,17 @@
     a{
         display: block;
         padding: 2px 7px;
-
         text-transform: capitalize;
         font-weight: 500;
-        &::before{ content: "#" }
+
+        &::before
+        { 
+            content: "#" 
+        }
     }
 
-    &:hover, &:focus, &[data-active="true"]{
+    &:hover, &:focus, &[data-active="true"]
+    {
         color: $white;
         background-color: $red;
     }

@@ -199,7 +199,7 @@ a {
 }
 .photographer-profil .photographer__btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 45px;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
@@ -382,6 +382,20 @@ a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 950px) {
+  .card-infos {
+    position: fixed;
+    display: flex;
+    gap: 65px;
+    bottom: 0;
+    left: 0;
+    background-color: #DB8876;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
 @media screen and (min-width: 950px) {
   .card-infos {
     position: fixed;
