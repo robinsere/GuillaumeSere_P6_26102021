@@ -1,6 +1,21 @@
+import vueTag from './vueTag.js'
 
-function createInfoTemplate() {
-
+function createInfoTemplate(photographers) {
+    let template = "";
+    photographers.forEach(photographer => {
+        template +=
+            ` <div class="photographer__infos">
+            <h1 class="photographer__infos__name">${photographer.name}</h1>
+            <p class="photographer__infos__city">${photographer.city}, ${photographer.country}</p>
+            <p class="photographer__infos__tagline">${photographer.tagline}</p>
+            <ul class="tag-list" aria-label="tags">
+             ${vueTag.createListTemplate(photographer.tags)}
+            </ul>
+        </div>
+        <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
+        <img class="photographer__img" src="https://guillaumesere.github.io/GuillaumeSere_P6_26102021/assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">`;
+    });
+    return template;
 }
 
 function createListMediaTemplate() {
