@@ -13,7 +13,7 @@ function createInfoTemplate(photographers) {
             </ul>
         </div>
         <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
-        <img class="photographer__img" src="https://guillaumesere.github.io/GuillaumeSere_P6_26102021/assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">`;
+        <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">`;
     });
     return template;
 }
