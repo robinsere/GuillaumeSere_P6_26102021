@@ -1,9 +1,9 @@
 import vueTag from './vueTag.js'
 
 // Renvoi le template de la page profil
-function createInfoTemplate(profil) {
+function createInfoTemplate() {
     let template = "";
-    profil.forEach(photographer => {
+    (photographer => {
         template +=
             ` <div class="photographer__infos">
             <h1 class="photographer__infos__name">${photographer.name}</h1>
