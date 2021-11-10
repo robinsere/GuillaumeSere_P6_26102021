@@ -16,9 +16,8 @@ export default class Photographer {
   renderPhotographerPage() {
 
     // Liste des profils
-    const profil = [this.photographer];
     const photographersPageElement = document.getElementById("photographer-profil");
-    photographersPageElement.innerHTML = vuePhotographerPage.createInfoTemplate(profil);
+    photographersPageElement.innerHTML = vuePhotographerPage.createInfoTemplate(this.photographer);
   
   }
 }

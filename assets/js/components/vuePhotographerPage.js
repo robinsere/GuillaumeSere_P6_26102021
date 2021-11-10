@@ -1,9 +1,8 @@
 import vueTag from './vueTag.js'
 
 // Renvoi le template de la page profil
-function createInfoTemplate() {
+function createInfoTemplate(photographer) {
     let template = "";
-    (photographer => {
         template +=
             ` <div class="photographer__infos">
             <h1 class="photographer__infos__name">${photographer.name}</h1>
@@ -15,9 +14,10 @@ function createInfoTemplate() {
         </div>
         <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
         <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">`;
-    });
-    return template;
-}
+
+        return template;
+    };
+   
 
 function createListMediaTemplate() {
 
