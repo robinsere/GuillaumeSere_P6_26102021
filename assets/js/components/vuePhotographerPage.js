@@ -27,7 +27,7 @@ function createListMediaTemplate(photographer) {
         `<article class="media">
         <a href="#" role="button" class="media__link">
             <img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}"
-                alt="">
+            alt="${media.alt}" > 
         </a>
         <footer class="media__infos">
             <p class="media__infos__title">${media.title}</p>
