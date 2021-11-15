@@ -1,7 +1,6 @@
 import HomePage from "./assets/js/homePage.js";
 import Photographer from "./assets/js/photographer.js";
 
-
 class FishEyeApp {
   constructor() {
      this.fetchJSON();

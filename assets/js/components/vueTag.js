@@ -4,12 +4,19 @@ function createListTemplate(tags) {
     let template = "";
     tags.forEach(tag => {
         template +=
-            `<li class="tag-item" data-active="false" data-value="${tag}" role="button" aria-label="filtre ${tag}">
+            `<li class="tag-item active" data-active="" data-value="${tag}" role="button" aria-label="filtre ${tag}">
             <a href="#">${tag}</a>
         </li>`;
     });
     return template;
 }
+
+/*
+function tagsActive() {
+    const active = document.getElementsByClassName("tag-list");
+	active.classList.add(".active");
+}
+*/
 
 function getTags(datas) {
     const tags = [];

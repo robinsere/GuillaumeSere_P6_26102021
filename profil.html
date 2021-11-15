@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <script src="app.js" type="module"></script>
+    <script src="./assets/js/components/contactForm.js"></script>
     <title>FishEye</title>
 </head>
 
@@ -59,7 +60,8 @@
     </aside>
 
 
-    <aside id="modal-lightbox" class="lightbox" tabindex="0" aria-label="Vue rapproché"></aside>
+    <aside id="modal-lightbox" class="lightbox" tabindex="0" aria-label="Vue rapproché">
+    </aside>
 
     <aside id="modal-form" class="form-contact" tabindex="0" aria-label="Modal de contact">
         <div class="form-contact__container">
@@ -83,7 +85,7 @@
                 </div>
                 <button type="submit" id="submitForm" class="btn btn-submit">Envoyer</button>
             </form>
-            <button id="closeModal" class="close" aria-label="fermer le formulaire">
+            <button id="closeModal" class="close" aria-label="fermer le formulaire" onclick="closeModal()">
             </button>
         </div>
     </aside>

@@ -676,6 +676,11 @@ a {
   flex-wrap: wrap;
   gap: 6px 5px;
   list-style: none;
+  /*
+  .tag-item.active{
+      color: $white;
+      background: $red;
+  }*/
 }
 .main .photographer-thumbnail .tag-list .tag-item {
   display: inline-block;

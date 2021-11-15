@@ -1,5 +1,6 @@
 import vueTag from './vueTag.js'
 
+
 // Renvoi le template de la page profil
 function createInfoTemplate(photographer) {
     let template = "";
@@ -12,22 +13,22 @@ function createInfoTemplate(photographer) {
              ${vueTag.createListTemplate(photographer.tags)}
             </ul>
         </div>
-        <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
+        <button id="contact-btn" class="btn photographer__btn" onclick="displayModal()">Contactez-moi</button>
         <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">
         `;
 
         return template;
     };
    
-
+// Renvoi la liste des médias selon le profil
 function createListMediaTemplate(photographer) {
     let template = "";
     photographer.medias.forEach(media => {
         template +=
         `<article class="media">
-        <a href="#" role="button" class="media__link">
+        <a href="#" role="button" class="media__link" onclick="displayMedia()">
             <img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}"
-            alt="${media.alt}" > 
+            alt="${media.alt}"> 
         </a>
         <footer class="media__infos">
             <p class="media__infos__title">${media.title}</p>
@@ -41,9 +42,35 @@ function createListMediaTemplate(photographer) {
     });
    
 return template;
+};
+
+
+function createLightboxTemplate(photographer) {
+    let template = "";
+    photographer.medias.forEach(media => {
+        template +=
+        `   <div class="lightbox__container">
+        <div class="media-container">
+            <img  class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="">
+        </div>
+        <p class="title">${media.title}</p>
+        <button class="arrow-left" aria-label="précédent">
+            <i role="button" class="fas fa-chevron-left"></i>
+        </button>
+        <button class="arrow-right" aria-label="suivant">
+            <i role="button" class="fas fa-chevron-right"></i>
+        </button>
+        <button class="close" aria-label="fermer la vue rapproché" onclick="closeMedia()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div> `
+    });
+    return template;
 }
 
 export default {
     createInfoTemplate,
-    createListMediaTemplate
+    createListMediaTemplate,
+    createLightboxTemplate
 }
+

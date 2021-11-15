@@ -21,7 +21,11 @@ export default class Photographer {
     // Liste des medias
     const photographersMediasElement = document.getElementById("gallery");
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
-  
+
+    // Liste des medias dans la lightbox
+    const lightboxMediasElement = document.getElementById("modal-lightbox");
+    lightboxMediasElement.innerHTML = vuePhotographerPage.createLightboxTemplate(this.photographer);
+    
   }
 
 }
