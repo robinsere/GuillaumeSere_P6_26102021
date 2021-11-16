@@ -416,13 +416,9 @@ a {
 .lightbox {
   position: fixed;
   inset: 0;
-  display: none;
   justify-content: center;
   align-items: center;
   background-color: #FFF;
-}
-.lightbox.open {
-  display: flex;
 }
 .lightbox__container {
   position: relative;

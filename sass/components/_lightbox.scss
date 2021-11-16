@@ -5,14 +5,9 @@
 .lightbox{
     position: fixed;
     inset: 0;
-    display: none;
     justify-content: center;
     align-items: center;
     background-color: $white;
-
-    &.open{
-        display: flex;
-    }
 
     &__container{
         position: relative;

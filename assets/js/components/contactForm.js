@@ -12,11 +12,11 @@ function closeModal() {
 }
 
 function displayMedia() {
-    const lightbox = document.getElementsById("modal-lightbox");
-    lightbox.style.display = "flex";
+    const lightbox = document.getElementById("modal-lightbox");
+    lightbox.style.display = "block";
 }
 
 function closeMedia() {
-    const lightbox = document.getElementsById("modal-lightbox");
+    const lightbox = document.getElementById("modal-lightbox");
     lightbox.style.display = "none";
 }

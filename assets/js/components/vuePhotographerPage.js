@@ -1,6 +1,5 @@
 import vueTag from './vueTag.js'
 
-
 // Renvoi le template de la page profil
 function createInfoTemplate(photographer) {
     let template = "";
@@ -51,7 +50,7 @@ function createLightboxTemplate(photographer) {
         template +=
         `   <div class="lightbox__container">
         <div class="media-container">
-            <img  class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="">
+            <img  class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">
         </div>
         <p class="title">${media.title}</p>
         <button class="arrow-left" aria-label="précédent">
@@ -65,6 +64,7 @@ function createLightboxTemplate(photographer) {
         </button>
     </div> `
     });
+
     return template;
 }
 
