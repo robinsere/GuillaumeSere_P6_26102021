@@ -49,9 +49,6 @@ function createLightboxTemplate(photographer) {
     photographer.medias.forEach(media => {
         template +=
         `   <div class="lightbox__container">
-        <div class="media-container">
-            <img  class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">
-        </div>
         <p class="title">${media.title}</p>
         <button class="arrow-left" aria-label="précédent">
             <i role="button" class="fas fa-chevron-left"></i>

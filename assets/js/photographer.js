@@ -32,7 +32,9 @@ export default class Photographer {
         const imageLightbox = lightbox.querySelector("img");
         imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
         console.log("media", media);
-
+        const titleLightbox = lightbox.querySelector("p");
+        titleLightbox.innerHTML = media.title;
+        
         lightbox.classList.add("open");
       } );
     });
