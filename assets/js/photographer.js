@@ -22,10 +22,20 @@ export default class Photographer {
     const photographersMediasElement = document.getElementById("gallery");
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
 
-    // Liste des medias dans la lightbox
-   /* const lightboxMediasElement = document.getElementById("modal-lightbox");
-    lightboxMediasElement.innerHTML = vuePhotographerPage.createLightboxTemplate(this.photographer);
-*/
+    const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
+    mediaLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        // lightbox
+        const lightbox = document.getElementById("modal-lightbox");
+        // Récupère le média à afficher
+        const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
+        const imageLightbox = lightbox.querySelector("img");
+        imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
+        console.log("media", media);
+
+        lightbox.classList.add("open");
+      } );
+    });
    
   }
 

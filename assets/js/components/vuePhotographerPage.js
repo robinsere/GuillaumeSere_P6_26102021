@@ -25,7 +25,7 @@ function createListMediaTemplate(photographer) {
     photographer.medias.forEach(media => {
         template +=
         `<article class="media">
-        <a href="#" role="button" class="media__link" >
+        <a href="#" role="button" class="media__link" data-mediaid="${media.id}" >
             <img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}"
             alt="${media.alt}"> 
         </a>
