@@ -25,7 +25,7 @@ function createListMediaTemplate(photographer) {
     photographer.medias.forEach(media => {
         template +=
         `<article class="media">
-        <a href="#" role="button" class="media__link" onclick="displayMedia()">
+        <a href="#" role="button" class="media__link" >
             <img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}"
             alt="${media.alt}"> 
         </a>
@@ -43,7 +43,7 @@ function createListMediaTemplate(photographer) {
 return template;
 };
 
-
+/*
 function createLightboxTemplate(photographer) {
     let template = "";
     photographer.medias.forEach(media => {
@@ -64,13 +64,13 @@ function createLightboxTemplate(photographer) {
         </button>
     </div> `
     });
-
+  
     return template;
 }
+*/
 
 export default {
     createInfoTemplate,
     createListMediaTemplate,
-    createLightboxTemplate
 }
 
