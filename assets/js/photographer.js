@@ -21,32 +21,36 @@ export default class Photographer {
     // Liste des medias
     const photographersMediasElement = document.getElementById("gallery");
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
-
+ 
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
       link.addEventListener("click", () => {
         // lightbox
         const lightbox = document.getElementById("modal-lightbox");
+
         // Récupère le média à afficher
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
         const imageLightbox = lightbox.querySelector("img");
         imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
-        console.log("media", media);
+        /*const videoLightbox = lightbox.querySelector("video");
+        videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;*/
+   
         // Affiche le titre
         const titleLightbox = lightbox.querySelector("p");
         titleLightbox.innerHTML = media.title;
+
         // ouverture de la lightbox
         lightbox.classList.add("open");
+
         // fermeture de la lightbox
         lightbox.addEventListener("click", () => {
-        lightbox.querySelector(".fa-times");
         lightbox.classList.remove("open");
         });
+
       });
       
     });
      
-   
   }
 
 }

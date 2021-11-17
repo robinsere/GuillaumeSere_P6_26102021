@@ -38,6 +38,7 @@ function createListMediaTemplate(photographer) {
             </div>
         </footer>
     </article>`;
+
     });
    
 return template;
