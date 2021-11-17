@@ -32,12 +32,20 @@ export default class Photographer {
         const imageLightbox = lightbox.querySelector("img");
         imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
         console.log("media", media);
+        // Affiche le titre
         const titleLightbox = lightbox.querySelector("p");
         titleLightbox.innerHTML = media.title;
-        
+        // ouverture de la lightbox
         lightbox.classList.add("open");
-      } );
+        // fermeture de la lightbox
+        lightbox.addEventListener("click", () => {
+        lightbox.querySelector(".fa-times");
+        lightbox.classList.remove("open");
+        });
+      });
+      
     });
+     
    
   }
 
