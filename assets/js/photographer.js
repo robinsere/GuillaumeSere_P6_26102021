@@ -32,8 +32,9 @@ export default class Photographer {
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
         const imageLightbox = lightbox.querySelector("img");
         imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
-        /*const videoLightbox = lightbox.querySelector("video");
-        videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;*/
+        const videoLightbox = lightbox.querySelector('video');
+        videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;
+        console.log(videoLightbox); 
    
         // Affiche le titre
         const titleLightbox = lightbox.querySelector("p");
