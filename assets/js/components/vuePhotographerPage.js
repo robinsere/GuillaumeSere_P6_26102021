@@ -30,7 +30,7 @@ function createListMediaTemplate(photographer) {
                  <source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4">
             </video> `;
         } else {
-            template += `<img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">`;
+            template += `<img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}"></img>`;
         }
         template += `</a>
         <footer class="media__infos">
@@ -43,14 +43,25 @@ function createListMediaTemplate(photographer) {
         </footer>
         </article>`;
     });
-
    
 return template;
 };
+
+function createMediaLightboxTemplate(media, photographer) {
+    let template = "";
+    if (media.video !== undefined) {
+        template += `<video id="video-media" class="media" controls=""><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>`;
+    } else {
+        template += `<img id="image-media" class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">`;
+    }
+    template += `<p class="title">${media.title}</p>`;
+    return template;
+}
 
 
 export default {
     createInfoTemplate,
     createListMediaTemplate,
+    createMediaLightboxTemplate,
 }
 

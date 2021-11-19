@@ -30,24 +30,8 @@ export default class Photographer {
 
         // Récupère le média à afficher
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
-        const imageLightbox = lightbox.querySelector("img");
-        const videoLightbox = lightbox.querySelector('video');
-        if (media.video !== undefined) {
-            videoLightbox.style = "display:block";
-            imageLightbox.style = "display:none";
-            videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;
-          } else {
-            videoLightbox.style = "display:none";
-            imageLightbox.style = "display:block";
-            imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
-          }
-      
-        console.log(videoLightbox); 
-   
-        // Affiche le titre
-        const titleLightbox = lightbox.querySelector("p");
-        titleLightbox.innerHTML = media.title;
-
+        const mediaContainer = lightbox.getElementsByClassName("media-container");
+        mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(media, this.photographer);
         // ouverture de la lightbox
         lightbox.classList.add("open");
 
