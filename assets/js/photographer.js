@@ -31,9 +31,17 @@ export default class Photographer {
         // Récupère le média à afficher
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
         const imageLightbox = lightbox.querySelector("img");
-        imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
         const videoLightbox = lightbox.querySelector('video');
-        videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;
+        if (media.video !== undefined) {
+            videoLightbox.style = "display:block";
+            imageLightbox.style = "display:none";
+            videoLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.video;
+          } else {
+            videoLightbox.style = "display:none";
+            imageLightbox.style = "display:block";
+            imageLightbox.src = "assets/images/photos/" + this.photographerId + "/" + media.image;
+          }
+      
         console.log(videoLightbox); 
    
         // Affiche le titre
