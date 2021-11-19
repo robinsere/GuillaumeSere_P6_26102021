@@ -30,7 +30,7 @@ function createListMediaTemplate(photographer) {
                  <source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4">
             </video> `;
         } else {
-            template += `<img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}"></img>`;
+            template += `<img class="media__link__img" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">`;
         }
         template += `</a>
         <footer class="media__infos">
