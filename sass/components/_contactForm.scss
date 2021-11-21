@@ -9,6 +9,7 @@
     font-size: 1.5rem;
     overflow-y: auto;
 
+
     &.open{
         display: block;
     }
@@ -128,4 +129,17 @@
             }
         }
     }
+}
+
+.hidden {
+    display: none;
+  }
+
+  .modal-body-conf{
+    text-align: center;
+    font-size: 33px;
+    padding: 65px;
+    height: 200px;
+    width: 90%;
+    color: white; 
 }

@@ -26,6 +26,14 @@
     <main class="main">
         <section id="photographer-profil" class="photographer-profil" data-modal="modal_inscription">
         </section>
+
+        <div class="hidden" data-modal="modal_success_inscription" ></div>
+        <div class="hidden" id="modal_success_inscription" >
+            <div class="form-contact__container">
+                <div class="modal-body-conf">Votre message à bien été envoyé</div>
+                <button class="btn btn-primary close">Fermer</button>
+            </div>
+        </div>
        
 
         <div id="filter">
@@ -74,14 +82,7 @@
         </div>
     </aside>
 
-    <div class="hidden" data-modal="modal_success_inscription"></div>
-    <div class="modal" id="modal_success_inscription">
-        <div class="content">
-            <span class="close closeModal"></span>
-            <div class="modal-body-conf">OK</div>
-            <button class="btn-primary closeModal">close</button>
-        </div>
-    </div>
+  
     <aside id="modal_inscription" class="form-contact" tabindex="0" aria-label="Modal de contact">
         <div class="form-contact__container">
             <h1 id="form-name" class="form-name">Contactez-moi<br></h1>
