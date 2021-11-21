@@ -4,7 +4,7 @@ import vueTag from './vueTag.js'
 function createInfoTemplate(photographer) {
     let template = "";
         template +=
-            ` <div class="photographer__infos">
+            `<div class="photographer__infos">
             <h1 class="photographer__infos__name">${photographer.name}</h1>
             <p class="photographer__infos__city">${photographer.city}, ${photographer.country}</p>
             <p class="photographer__infos__tagline">${photographer.tagline}</p>
@@ -12,7 +12,7 @@ function createInfoTemplate(photographer) {
              ${vueTag.createListTemplate(photographer.tags)}
             </ul>
         </div>
-        <button id="contact-btn" class="btn photographer__btn" onclick="displayModal()">Contactez-moi</button>
+        <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
         <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">
         `;
 
@@ -47,6 +47,7 @@ function createListMediaTemplate(photographer) {
 return template;
 };
 
+//Renvoi une vidéo ou une image dans le template
 function createMediaLightboxTemplate(media, photographer) {
     let template = "";
     if (media.video !== undefined) {

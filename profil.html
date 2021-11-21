@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <script src="app.js" type="module"></script>
-    <script src="./assets/js/components/contactForm.js"></script>
     <title>FishEye</title>
 </head>
 
@@ -25,9 +24,9 @@
     </header>
 
     <main class="main">
-        <section id="photographer-profil" class="photographer-profil">
-
+        <section id="photographer-profil" class="photographer-profil" data-modal="modal_inscription">
         </section>
+       
 
         <div id="filter">
             <div class="filter">
@@ -75,10 +74,18 @@
         </div>
     </aside>
 
-    <aside id="modal-form" class="form-contact" tabindex="0" aria-label="Modal de contact">
+    <div class="hidden" data-modal="modal_success_inscription"></div>
+    <div class="modal" id="modal_success_inscription">
+        <div class="content">
+            <span class="close closeModal"></span>
+            <div class="modal-body-conf">OK</div>
+            <button class="btn-primary closeModal">close</button>
+        </div>
+    </div>
+    <aside id="modal_inscription" class="form-contact" tabindex="0" aria-label="Modal de contact">
         <div class="form-contact__container">
             <h1 id="form-name" class="form-name">Contactez-moi<br></h1>
-            <form id="contact-form" class="form" tabindex="0" action="index.html" method="get" aria-label="formulaire de contact">
+            <form id="contact-form" class="form" tabindex="0" action="" method="get" aria-label="formulaire de contact">
                 <div class="form__item" data-error="Le champ Prénom est requis avec 2 lettres minimum">
                     <label for="first-name">Prénom</label>
                     <input type="text" class="text-control" id="first-name" name="first_name">
@@ -97,7 +104,7 @@
                 </div>
                 <button type="submit" id="submitForm" class="btn btn-submit">Envoyer</button>
             </form>
-            <button id="closeModal" class="close" aria-label="fermer le formulaire" onclick="closeModal()">
+            <button id="closeModal" class="close" aria-label="fermer le formulaire">
             </button>
         </div>
     </aside>

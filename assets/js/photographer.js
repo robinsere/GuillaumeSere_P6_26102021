@@ -1,4 +1,5 @@
 import vuePhotographerPage from "./components/vuePhotographerPage.js";
+import contactForm from "./components/contactForm.js";
 
 export default class Photographer {
   constructor(datas) {
@@ -43,7 +44,10 @@ export default class Photographer {
       });
       
     });
-     
+    console.log("modal::", contactForm.modal);
+    // Initialisation de la modal
+    contactForm.modal.init();
+    document.getElementById("contact-form").addEventListener("submit", contactForm.form_inscription.onSubmit);
   }
 
 }
