@@ -87,21 +87,25 @@
         <div class="form-contact__container">
             <h1 id="form-name" class="form-name">Contactez-moi<br></h1>
             <form id="contact-form" class="form" tabindex="0" action="" method="get" aria-label="formulaire de contact">
-                <div class="form__item" data-error="Le champ Prénom est requis avec 2 lettres minimum">
+                <div class="form__item">
                     <label for="first-name">Prénom</label>
                     <input type="text" class="text-control" id="first-name" name="first_name">
+                    <div class="errorMsg">Le champ Prénom est requis avec 2 lettres minimum</div>
                 </div>
-                <div class="form__item" data-error="Le champ Nom est requis avec 2 lettres minimum">
+                <div class="form__item">
                     <label for="last-name">Nom</label>
                     <input type="text" class="text-control" id="last-name" name="last_name">
+                    <div class="errorMsg">Le champ Nom est requis avec 2 lettres minimum</div>
                 </div>
-                <div class="form__item" data-error="Le champ Email est requis">
+                <div class="form__item">
                     <label for="email">Email</label>
                     <input type="email" class="text-control" id="email" name="email">
+                    <div class="errorMsg">Le champ Email est requis</div>
                 </div>
-                <div class="form__item" data-error="Le champ est requis">
+                <div class="form__item">
                     <label for="message">Votre message</label>
                     <textarea class="text-control" name="message" id="message"></textarea>
+                    <div class="errorMsg">Le champ est requis</div>
                 </div>
                 <button type="submit" id="submitForm" class="btn btn-submit">Envoyer</button>
             </form>

@@ -544,15 +544,18 @@ a {
   min-width: 100%;
   max-width: 100%;
 }
-.form-contact .form__item[data-error] .text-control {
-  border: 2px solid #901C1C;
-}
-.form-contact .form__item[data-error]::after {
-  content: attr(data-error);
-  display: block;
-  width: 100%;
-  font-size: 0.8rem;
+.form-contact .errorMsg {
   color: #901C1C;
+  font-size: 14px;
+  text-align: left;
+  margin-top: 3px;
+  display: none;
+}
+.form-contact .error .errorMsg {
+  display: block;
+}
+.form-contact .error .text-control {
+  border: 2px solid #901C1C;
 }
 .form-contact .close {
   position: absolute;

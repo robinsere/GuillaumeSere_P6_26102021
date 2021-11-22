@@ -54,16 +54,23 @@
                 max-width: 100%;
             }
 
-            &[data-error] .text-control{ border: 2px solid $red; }
-            &[data-error]::after {
-                content: attr(data-error);
-                display: block;
-                width: 100%;
-                font-size: .8rem;
-                color: $red;
-              }
+           
         }
     }
+
+    .errorMsg{
+        color: $red;
+        font-size: 14px;
+        text-align: left;
+        margin-top: 3px;
+        display: none;
+      }
+      .error .errorMsg{
+        display: block;
+      }
+      .error .text-control{
+          border: 2px solid $red;
+      }
 
     .close{
         position: absolute;
@@ -143,3 +150,4 @@
     width: 90%;
     color: white; 
 }
+
