@@ -33,6 +33,7 @@ export default class Photographer {
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
         const mediaContainer = lightbox.getElementsByClassName("media-container");
         mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(media, this.photographer);
+
         // ouverture de la lightbox
         lightbox.classList.add("open");
 
@@ -44,8 +45,20 @@ export default class Photographer {
       });
       
     });
-    console.log("modal::", contactForm.modal);
-    // Initialisation de la modal
+
+   // gestion des filtres de trie catégories
+   const filter = document.getElementById("filter-btn");
+   const filterList = document.getElementById('filter-list');
+  
+   filter.addEventListener("click", () => {
+        filterList.style.display = "block";
+   });
+     
+   filterList.addEventListener("click", () => {
+    filterList.style.display = "none";
+    });
+
+    // Initialisation de la modal de contact
     contactForm.modal.init();
     document.getElementById("contact-form").addEventListener("submit", contactForm.form_inscription.onSubmit);
   }
