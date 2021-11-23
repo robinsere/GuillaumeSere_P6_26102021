@@ -11,13 +11,6 @@ function createListTemplate(tags) {
     return template;
 }
 
-/*
-function tagsActive() {
-    const active = document.getElementsByClassName("tag-list");
-	active.classList.add(".active");
-}
-*/
-
 function getTags(datas) {
     const tags = [];
     datas.photographers.forEach(photographer => {

@@ -15,6 +15,14 @@
     color: $white;
     cursor: pointer;
 
+    &.btn-primary{
+        margin: 0 auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
     &.btn-submit{
         width: 170px;
     }
@@ -23,6 +31,8 @@
         background-color: $lightRed;
         color: $black;
     }
+
+   
 
 
     @media screen and (min-width: 950px){

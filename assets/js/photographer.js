@@ -31,31 +31,40 @@ export default class Photographer {
 
         // Récupère le média à afficher
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
-        const mediaContainer = lightbox.getElementsByClassName("media-container");
+        const mediaContainer = lightbox.getElementsByClassName("lightbox__container");
         mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(media, this.photographer);
 
         // ouverture de la lightbox
         lightbox.classList.add("open");
 
         // fermeture de la lightbox
-        lightbox.addEventListener("click", () => {
+        lightbox.querySelector(".close").addEventListener("click", () => {
         lightbox.classList.remove("open");
         });
+
+         // Pagination de la lightbox
+        const mediaPrev = lightbox.getElementsByClassName("fa-chevron-left");
+        const mediaNext = lightbox.getElementsByClassName("fa-chevron-right");
+
+        console.log(mediaPrev);
+        console.log(mediaNext);
 
       });
       
     });
 
-   // gestion des filtres de trie catégories
+   // gestion des filtres de trie par catégorie
    const filter = document.getElementById("filter-btn");
    const filterList = document.getElementById('filter-list');
   
+   // Ouverture du bouton de trie
    filter.addEventListener("click", () => {
         filterList.style.display = "block";
    });
-     
+    
+   // Fermeture du bouton de trie
    filterList.addEventListener("click", () => {
-    filterList.style.display = "none";
+        filterList.style.display = "none";
     });
 
     // Initialisation de la modal de contact

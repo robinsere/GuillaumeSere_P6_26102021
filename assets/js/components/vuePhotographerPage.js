@@ -23,7 +23,7 @@ function createInfoTemplate(photographer) {
 function createListMediaTemplate(photographer) {
     let template = "";
     photographer.medias.forEach(media => {
-        template += `<article class="media"><a href="#" role="button" class="media__link" data-mediaid="${media.id}">`;
+        template += `<article class="media"><a href="#" role="button" class="media__link" data-mediaid="${media.id}" aria-label="${media.title}">`;
         if (media.video !== undefined) {
             template += `
             <video class="media__link__video" aria-label="${media.title}" controls="true">
@@ -51,9 +51,35 @@ return template;
 function createMediaLightboxTemplate(media, photographer) {
     let template = "";
     if (media.video !== undefined) {
-        template += `<video id="video-media" class="media" controls=""><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>`;
+        template += `
+                <div class="media-container">
+                 <video id="video-media" class="media"><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>
+                </div>
+                <button class="arrow-left" aria-label="précédent">
+                    <i role="button" class="fas fa-chevron-left"></i>
+                </button>
+                <button class="arrow-right" aria-label="suivant">
+                    <i role="button" class="fas fa-chevron-right"></i>
+                </button>
+                <button class="close" aria-label="fermer la vue rapproché">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
     } else {
-        template += `<img id="image-media" class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">`;
+        template += `
+                <div class="media-container">
+                <img id="image-media" class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">
+            </div>
+            <button class="arrow-left" aria-label="précédent">
+                <i role="button" class="fas fa-chevron-left"></i>
+            </button>
+            <button class="arrow-right" aria-label="suivant">
+                <i role="button" class="fas fa-chevron-right"></i>
+            </button>
+            <button class="close" aria-label="fermer la vue rapproché">
+                <i class="fas fa-times"></i>
+            </button>
+            `;
     }
     template += `<p class="title">${media.title}</p>`;
     return template;
