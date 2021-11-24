@@ -29,18 +29,11 @@
         transition: transform .3s ease;
     }
 
-    .photographer__btn{
-        position: fixed;
-        bottom: 45px;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
-    }
-
     @media screen and (min-width: 950px){
         background-color: $lightGrey;
         border-radius: $borderRadius;
         padding: 50px;
-        grid-template-columns: auto 1fr auto;
+
 
         .photographer__infos{
             max-width: 410px;
@@ -50,15 +43,24 @@
             & .tag-item{ font-size: .8rem; }
         }
 
-        .photographer__btn{
-            place-self: start;
-            position: static;
-            transform: translate3d(0,0,0);
-        }
-
         .photographer__img{
             width: 200px;
             height: 200px;
         }
+    }
+}
+
+.photographer__btn{
+    position: fixed;
+    left: 48%;
+    margin-top: 10px;
+    transform: translate3d(-50%, 0, 0);
+}
+
+@media screen and (min-width: 950px){
+
+    .photographer__btn{
+        position: absolute;
+        margin-top: -240px;
     }
 }

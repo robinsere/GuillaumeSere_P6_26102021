@@ -12,7 +12,7 @@ function createInfoTemplate(photographer) {
              ${vueTag.createListTemplate(photographer.tags)}
             </ul>
         </div>
-        <button id="contact-btn" class="btn photographer__btn">Contactez-moi</button>
+       
         <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">
         `;
 
@@ -26,7 +26,7 @@ function createListMediaTemplate(photographer) {
         template += `<article class="media"><a href="#" role="button" class="media__link" data-mediaid="${media.id}" aria-label="${media.title}">`;
         if (media.video !== undefined) {
             template += `
-            <video class="media__link__video" aria-label="${media.title}" controls="true">
+            <video class="media__link__video" aria-label="${media.title}">
                  <source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4">
             </video> `;
         } else {
@@ -53,7 +53,7 @@ function createMediaLightboxTemplate(media, photographer) {
     if (media.video !== undefined) {
         template += `
                 <div class="media-container">
-                 <video id="video-media" class="media"><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>
+                 <video id="video-media" class="media" controls="true"><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>
                 </div>
                 <button class="arrow-left" aria-label="précédent">
                     <i role="button" class="fas fa-chevron-left"></i>
