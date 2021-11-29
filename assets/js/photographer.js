@@ -42,12 +42,17 @@ export default class Photographer {
         lightbox.classList.remove("open");
         });
 
-         // Pagination de la lightbox
-        const mediaPrev = lightbox.getElementsByClassName("fa-chevron-left");
-        const mediaNext = lightbox.getElementsByClassName("fa-chevron-right");
+        // Récupère les médias de la lightbox
+        const lightboxMedia = link.dataset.index[0];
+        console.log(lightboxMedia);
 
-        console.log(mediaPrev);
-        console.log(mediaNext);
+         //  pagination de la lightbox
+        lightbox.querySelector("arrow-left").addEventListener('click', () => {
+            link.dataset.index[0] + 1
+        });
+        lightbox.querySelector("arrow-right").addEventListener('click', () => {
+            link.dataset.index[0] - 1
+        });
 
       });
       

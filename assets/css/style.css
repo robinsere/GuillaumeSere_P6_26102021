@@ -235,6 +235,7 @@ a {
   .photographer__btn {
     position: absolute;
     margin-top: -240px;
+    z-index: 0;
   }
 }
 .btn {
@@ -313,7 +314,6 @@ a {
     left: 0;
     width: 100%;
     background-color: #901C1C;
-    padding: 0 10px;
     color: #FFF;
     font-size: 1.25rem;
     font-weight: 500;
@@ -326,8 +326,15 @@ a {
     cursor: pointer;
     border-bottom: 2px solid #FFF;
   }
+  .filter__wrapper .filter-list__item:hover {
+    list-style: none;
+    background-color: #DB8876;
+    color: black;
+    border-radius: 5px;
+  }
   .filter__wrapper .filter-list__item:last-child {
     border-bottom: 0px;
+    list-style: none;
   }
   .filter__wrapper.open .filter-btn::after {
     transform: rotate(-135deg) translate3d(-10%, -10%, 0);

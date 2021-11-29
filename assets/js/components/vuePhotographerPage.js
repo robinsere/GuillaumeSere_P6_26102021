@@ -12,18 +12,17 @@ function createInfoTemplate(photographer) {
              ${vueTag.createListTemplate(photographer.tags)}
             </ul>
         </div>
-       
         <img class="photographer__img" src="assets/images/photos/Photographers ID Photos/${photographer.portrait}" alt="${photographer.alt}">
         `;
 
-        return template;
+    return template;
     };
    
 // Renvoi la liste des médias selon le profil
 function createListMediaTemplate(photographer) {
     let template = "";
-    photographer.medias.forEach(media => {
-        template += `<article class="media"><a href="#" role="button" class="media__link" data-mediaid="${media.id}" aria-label="${media.title}">`;
+    photographer.medias.forEach ((media,index) => {
+        template += `<article class="media"><a href="#" role="button" class="media__link" data-mediaid="${media.id}" data-index="${index}" aria-label="${media.title}">`;
         if (media.video !== undefined) {
             template += `
             <video class="media__link__video" aria-label="${media.title}">
