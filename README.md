@@ -26,11 +26,11 @@ correspondent à cette étiquette.
 - Lorsque l'utilisateur clique sur la vignette d'un photographe, il est
 amené à sa page.
 - Pages des photographes (une pour chaque photographe échantillon) :
-○ Affiche une galerie des travaux du photographe.
-○ Les photographes peuvent montrer à la fois des photos et des vidéos.
+- Affiche une galerie des travaux du photographe.
+- Les photographes peuvent montrer à la fois des photos et des vidéos.
 - Dans le cas des vidéos, montrer une image miniature dans la
 galerie.
-○ Chaque média comprend un titre et un nombre de likes.
+- Chaque média comprend un titre et un nombre de likes.
 - Lorsque l'utilisateur clique sur l'icône "Like", le nombre de likes
 affiché est incrémenté.
 - Le nombre de likes total d’un photographe doit correspondre à la
