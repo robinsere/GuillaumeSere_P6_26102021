@@ -2,19 +2,19 @@
 
 ![15977571210897_image2](https://user-images.githubusercontent.com/75996200/144131999-51207c4b-6d9e-433b-b70d-b44de9467ba6.png)
 
-#Entreprise :
+# Entreprise :
 Site web de photographes freelances.
 “Nos clients prennent de super photos, mais ils n’y connaissent rien en
 développement web. C'est pourquoi nous proposons une plateforme unique pour
 montrer leurs photos sur une belle page et les contacter pour des événements ou
 des tirages. Nous sommes l'un des plus grands sites de photographie en freelance,
 avec un énorme réseau de photographes.”
-#Objectif :
+# Objectif :
 Leur site est obsolète et a besoin d'être remanié.
 "Notre site a été construit il y a plus de dix ans, et nous n'avons pas eu l'occasion de
 le mettre à jour jusqu'à présent. Nous venons de lever des fonds et nous aimerions
 que votre équipe le transforme d'un site statique à un site dynamique".
-#Prototype des fonctionnalités :
+# Prototype des fonctionnalités :
 Nous devons créer les pages suivantes pour le prototype :
 ● Page d'accueil :
 ○ Liste de tous les photographes avec leur nom, leur slogan, leur
@@ -45,8 +45,8 @@ média à l'autre (les utilisateurs peuvent cliquer sur ces boutons
 pour naviguer).
  Les touches fléchées permettent également de naviguer entre
 les médias.
-# Afficher un bouton pour contacter le photographe.
-# Le formulaire de contact est une modale qui s'affiche par-dessus
+ Afficher un bouton pour contacter le photographe.
+ Le formulaire de contact est une modale qui s'affiche par-dessus
 le reste.
 Il comprend des champs pour les noms, l'adresse électronique et
 le message.
@@ -71,7 +71,7 @@ clavier) doit être configurée (utilisez KeyboardEvent.key ou
 KeyboardEvent.code.).
  Utilisez un lecteur d'écran gratuit pour vous faire une idée de ce que
 représente l'utilisation du site pour une personne malvoyante.
-Contraintes techniques additionnelles
+# Contraintes techniques additionnelles
  Le code est séparé en différents fichiers (HTML, CSS, JavaScript).
  ESLint est utilisé (avec les paramètres par défaut) pour garantir que le
 code est robuste. Ceci est particulièrement facile à intégrer avec l'IDE
