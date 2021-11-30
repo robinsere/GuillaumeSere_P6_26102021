@@ -35,10 +35,10 @@ galerie.
 affiché est incrémenté.
 ■ Le nombre de likes total d’un photographe doit correspondre à la
 somme des likes de chacun de ses médias.aw
-○ Les médias peuvent être triés par popularité ou par titre.
-○ Lorsque l'utilisateur clique sur un média, celui-ci doit s’ouvrir dans une
+- Les médias peuvent être triés par popularité ou par titre.
+- Lorsque l'utilisateur clique sur un média, celui-ci doit s’ouvrir dans une
 lightbox :
-■ Lorsque la lightbox est affichée, il y a une croix dans le coin pour
+- Lorsque la lightbox est affichée, il y a une croix dans le coin pour
 fermer la fenêtre.
  Des boutons de navigation permettent de passer d'un élément
 média à l'autre (les utilisateurs peuvent cliquer sur ces boutons
