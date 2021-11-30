@@ -16,24 +16,24 @@ le mettre à jour jusqu'à présent. Nous venons de lever des fonds et nous aime
 que votre équipe le transforme d'un site statique à un site dynamique".
 # Prototype des fonctionnalités :
 Nous devons créer les pages suivantes pour le prototype :
-● Page d'accueil :
-○ Liste de tous les photographes avec leur nom, leur slogan, leur
+- Page d'accueil :
+- Liste de tous les photographes avec leur nom, leur slogan, leur
 localisation, leur prix/heure, leurs tags et une image miniature de leur
 choix.
-○ En cliquant sur une étiquette (tag) dans la barre de navigation, la liste
+- En cliquant sur une étiquette (tag) dans la barre de navigation, la liste
 des photographes est filtrée pour n'afficher que ceux qui
 correspondent à cette étiquette.
-○ Lorsque l'utilisateur clique sur la vignette d'un photographe, il est
+- Lorsque l'utilisateur clique sur la vignette d'un photographe, il est
 amené à sa page.
-● Pages des photographes (une pour chaque photographe échantillon) :
+- Pages des photographes (une pour chaque photographe échantillon) :
 ○ Affiche une galerie des travaux du photographe.
 ○ Les photographes peuvent montrer à la fois des photos et des vidéos.
-■ Dans le cas des vidéos, montrer une image miniature dans la
+- Dans le cas des vidéos, montrer une image miniature dans la
 galerie.
 ○ Chaque média comprend un titre et un nombre de likes.
-■ Lorsque l'utilisateur clique sur l'icône "Like", le nombre de likes
+- Lorsque l'utilisateur clique sur l'icône "Like", le nombre de likes
 affiché est incrémenté.
-■ Le nombre de likes total d’un photographe doit correspondre à la
+- Le nombre de likes total d’un photographe doit correspondre à la
 somme des likes de chacun de ses médias.aw
 - Les médias peuvent être triés par popularité ou par titre.
 - Lorsque l'utilisateur clique sur un média, celui-ci doit s’ouvrir dans une
