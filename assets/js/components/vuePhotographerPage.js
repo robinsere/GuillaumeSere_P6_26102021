@@ -1,4 +1,5 @@
 import vueTag from './vueTag.js'
+import likes from './likes.js'
 
 // Renvoi le template de la page profil
 function createInfoTemplate(photographer) {
@@ -40,7 +41,14 @@ function createListMediaTemplate(photographer) {
                     tabindex="0"></i>
             </div>
         </footer>
-        </article>`;
+        </article>
+            <aside id="card-infos" class="card-infos">
+            <div class="cards-infos__nb-likes">
+                <span id="counter-likes" class="nb-likes">${media.likes}</span>
+                <i class="fas fa-heart" aria-label="likes"></i>
+            </div>
+            <p>${photographer.price} € / jour</p>
+        </aside> `;
     });
    
 return template;

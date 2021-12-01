@@ -1,5 +1,6 @@
 import vuePhotographerPage from "./components/vuePhotographerPage.js";
 import contactForm from "./components/contactForm.js";
+import likes from "./components/likes.js";
 
 export default class Photographer {
   constructor(datas) {
@@ -10,7 +11,7 @@ export default class Photographer {
     if (this.photographer === undefined) window.location = "index.html";
 
     this.photographer.medias = datas.media.filter(media => media.photographerId == this.photographerId);
-    console.log(this.photographer.medias);
+    console.log(this.photographer);
   }
 
   renderPhotographerPage() {
@@ -22,6 +23,10 @@ export default class Photographer {
     // Liste des medias
     const photographersMediasElement = document.getElementById("gallery");
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+
+    // Liste des likes 
+    const photographerLike = document.getElementById("counter-likes");
+    const compteur = this.photographer.medias[0].likes;
  
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
@@ -42,16 +47,15 @@ export default class Photographer {
         lightbox.classList.remove("open");
         });
 
-        // Récupère les médias de la lightbox
-        const lightboxMedia = link.dataset.index[0];
-        console.log(lightboxMedia);
-
          //  pagination de la lightbox
-        lightbox.querySelector("arrow-left").addEventListener('click', () => {
-            link.dataset.index[0] + 1
+         const nextMedia = (media + 1 >= link.dataset.index)[0] ? 0 : media + 1;
+        document.querySelector(".arrow-left").addEventListener('click', (e) => {
+            (media + 1 >= e.length) ? 0 : media + 1
+           console.log(this.photographer.medias)
         });
-        lightbox.querySelector("arrow-right").addEventListener('click', () => {
-            link.dataset.index[0] - 1
+        document.querySelector(".arrow-right").addEventListener('click', (e) => {
+            (media - 1 === -1) ? e.length - 1 : media - 1
+            console.log(e)
         });
 
       });

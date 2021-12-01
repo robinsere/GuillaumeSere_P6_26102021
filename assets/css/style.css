@@ -417,7 +417,7 @@ a {
     display: flex;
     gap: 65px;
     bottom: 0;
-    right: 35px;
+    right: 0;
     background-color: #DB8876;
     border-radius: 5px 5px 0 0;
     padding: 20px 30px;
