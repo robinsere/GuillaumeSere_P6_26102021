@@ -62,30 +62,12 @@ function createMediaLightboxTemplate(media, photographer) {
                 <div class="media-container">
                  <video id="video-media" class="media" controls="true"><source src="assets/images/photos/${photographer.id}/${media.video}" type="video/mp4"></video>
                 </div>
-                <button class="arrow-left" aria-label="précédent">
-                    <i role="button" class="fas fa-chevron-left"></i>
-                </button>
-                <button class="arrow-right" aria-label="suivant">
-                    <i role="button" class="fas fa-chevron-right"></i>
-                </button>
-                <button class="close" aria-label="fermer la vue rapproché">
-                    <i class="fas fa-times"></i>
-                </button>
             `;
     } else {
         template += `
                 <div class="media-container">
                 <img id="image-media" class="media" src="assets/images/photos/${photographer.id}/${media.image}" alt="${media.alt}">
             </div>
-            <button class="arrow-left" aria-label="précédent">
-                <i role="button" class="fas fa-chevron-left"></i>
-            </button>
-            <button class="arrow-right" aria-label="suivant">
-                <i role="button" class="fas fa-chevron-right"></i>
-            </button>
-            <button class="close" aria-label="fermer la vue rapproché">
-                <i class="fas fa-times"></i>
-            </button>
             `;
     }
     template += `<p class="title">${media.title}</p>`;
