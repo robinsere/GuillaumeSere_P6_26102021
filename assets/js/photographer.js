@@ -44,22 +44,20 @@ export default class Photographer {
 
         // fermeture de la lightbox
         lightbox.querySelector(".close").addEventListener("click", () => {
-        lightbox.classList.remove("open");
+          lightbox.classList.remove("open");
         });
 
-         //  pagination de la lightbox
-         const nextMedia = (media + 1 >= link.dataset.index)[0] ? 0 : media + 1;
+        //  pagination de la lightbox
         document.querySelector(".arrow-left").addEventListener('click', (e) => {
-            (media + 1 >= e.length) ? 0 : media + 1
-           console.log(this.photographer.medias)
+          link.dataset.index--;
+          mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
         });
         document.querySelector(".arrow-right").addEventListener('click', (e) => {
-            (media - 1 === -1) ? e.length - 1 : media - 1
-            console.log(e)
+          link.dataset.index++
+          mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
         });
 
       });
-      
     });
 
    // gestion des filtres de trie par catégorie
