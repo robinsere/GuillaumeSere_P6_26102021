@@ -453,12 +453,14 @@ a {
   color: #901C1C;
 }
 .lightbox .arrow-left {
+  cursor: pointer;
   position: absolute;
   left: 30px;
   border: none;
   background: transparent;
 }
 .lightbox .arrow-right {
+    cursor: pointer;
     position: absolute;
     right: 30px;
     border: none;
@@ -481,6 +483,7 @@ a {
   color: #901C1C;
 }
 .lightbox .close {
+  cursor: pointer;
   background: transparent;
   border:none;
   position: absolute;
