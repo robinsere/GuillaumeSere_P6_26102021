@@ -44,20 +44,35 @@ export default class Photographer {
 
         // fermeture de la lightbox
         lightbox.querySelector(".close").addEventListener("click", () => {
-          lightbox.classList.remove("open");
+        lightbox.classList.remove("open");
+        });
+        
+         //  pagination de la lightbox
+         document.querySelector(".arrow-left").addEventListener('click', () => {
+            if(link.dataset.index == 0){
+                link.dataset.index = this.photographer.medias.length - 1;
+                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
+            }else{
+               link.dataset.index --;
+                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
+                console.log([link.dataset.index]) 
+            }
         });
 
-        //  pagination de la lightbox
-        document.querySelector(".arrow-left").addEventListener('click', (e) => {
-          link.dataset.index--;
-          mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
-        });
-        document.querySelector(".arrow-right").addEventListener('click', (e) => {
-          link.dataset.index++
-          mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
+        document.querySelector(".arrow-right").addEventListener('click', () => {
+            if(link.dataset.index == 0){
+                link.dataset.index = this.photographer.medias.length + 1;
+                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
+            }else{
+                link.dataset.index ++;
+                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
+                console.log([link.dataset.index])
+            }
+       
         });
 
       });
+      
     });
 
    // gestion des filtres de trie par catégorie

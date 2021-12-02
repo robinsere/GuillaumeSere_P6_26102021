@@ -453,12 +453,18 @@ a {
   color: #901C1C;
 }
 .lightbox .arrow-left {
-  grid-area: 1/1/3/2;
-  align-self: center;
+  cursor: pointer;
+  position: absolute;
+  left: 30px;
+  border: none;
+  background: transparent;
 }
 .lightbox .arrow-right {
-  grid-area: 1/3/3/4;
-  align-self: center;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    border: none;
+    background: transparent;
 }
 .lightbox .media-container {
   grid-area: 1/2/2/3;
@@ -477,9 +483,12 @@ a {
   color: #901C1C;
 }
 .lightbox .close {
+  cursor: pointer;
+  background: transparent;
+  border:none;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 30px;
+  right: 30px;
   min-width: 40px;
   min-height: 40px;
   transform: translate3d(0, -12px, 0);
@@ -496,10 +505,10 @@ a {
   .lightbox__container i {
     font-size: 3rem;
   }
-  .lightbox .title {
+  .lightbox__container .title {
     font-size: 1.75rem;
   }
-  .lightbox .close {
+  .lightbox__container .close {
     position: absolute;
     top: 0;
     right: 0;
