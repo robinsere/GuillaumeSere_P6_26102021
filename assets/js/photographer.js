@@ -48,27 +48,20 @@ export default class Photographer {
         });
         
          //  pagination de la lightbox
-         document.querySelector(".arrow-left").addEventListener('click', () => {
-            if(link.dataset.index == 0){
-                link.dataset.index = this.photographer.medias.length - 1;
-                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
-            }else{
-               link.dataset.index --;
-                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
-                console.log([link.dataset.index]) 
+        document.querySelector(".arrow-left").addEventListener('click', () => {
+            if (link.dataset.index == 0) {
+              link.dataset.index = this.photographer.medias.length;
             }
+            link.dataset.index --;
+            mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
         });
 
         document.querySelector(".arrow-right").addEventListener('click', () => {
-            if(link.dataset.index == 0){
-                link.dataset.index = this.photographer.medias.length + 1;
-                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
-            }else{
-                link.dataset.index ++;
-                mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
-                console.log([link.dataset.index])
+            link.dataset.index ++;
+            if (link.dataset.index == this.photographer.medias.length) {
+              link.dataset.index = 0;
             }
-       
+            mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(this.photographer.medias[link.dataset.index], this.photographer);
         });
 
       });
