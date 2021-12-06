@@ -37,8 +37,8 @@ function createListMediaTemplate(photographer) {
             <p class="media__infos__title">${media.title}</p>
             <div class="media__infos__likes">
                 <span class="media__infos__like-nb">${media.likes}</span>
-                <i class="far fa-heart media__infos__likes_-icon" aria-label="likes" role="button"
-                    tabindex="0"></i>
+                <i class="far fa-heart media__infos__likes_icon" aria-label="likes" role="button"
+                   tabindex="0"></i>
             </div>
         </footer>
         </article>

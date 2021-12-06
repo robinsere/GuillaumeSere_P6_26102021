@@ -1,5 +1,5 @@
-function createLikeTemplate(mediaLikes) {
-    let template = [];
+function createLikeTemplate(mediaLikes, photographer) {
+    let template = "";
     mediaLikes.forEach(like => {
         template +=
             ` <aside id="card-infos" class="card-infos">
@@ -13,8 +13,17 @@ function createLikeTemplate(mediaLikes) {
     return template;
 }
 
+function getLike(datas) {
+    const mediaLikes = [];
+    datas.photographers.forEach(photographer => {
+        mediaLikes.push(...photographer.mediaLikes);
+    });
+    return [...new Set(mediaLikes)];
+}
+
 
 export default {
-   createLikeTemplate
+   createLikeTemplate,
+   getLike
 }
 

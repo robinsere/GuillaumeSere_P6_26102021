@@ -11,7 +11,7 @@ export default class Photographer {
     if (this.photographer === undefined) window.location = "index.html";
 
     this.photographer.medias = datas.media.filter(media => media.photographerId == this.photographerId);
-    console.log(this.photographer);
+ 
   }
 
   renderPhotographerPage() {
@@ -25,9 +25,19 @@ export default class Photographer {
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
 
     // Liste des likes 
-    const photographerLike = document.getElementById("counter-likes");
-    const compteur = this.photographer.medias[0].likes;
- 
+    const photographerLike = document.querySelectorAll(".media__infos__likes_icon");
+    let photographerCompteur = document.getElementById("counter-likes");
+    let likes = document.querySelector(".media__infos__like-nb");
+    
+    let compteur = "";
+    for (let i = 0; i < photographerLike.length; i++) {
+        photographerLike[i].addEventListener("click", () => {
+           compteur =  this.photographer.medias[0].likes++;
+            console.log(compteur)
+            likes.innerHTML = compteur;
+        });
+    }
+    
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -38,7 +48,7 @@ export default class Photographer {
         const media = this.photographer.medias.filter(media => media.id == link.dataset.mediaid)[0];
         const mediaContainer = lightbox.getElementsByClassName("lightbox__container");
         mediaContainer[0].innerHTML = vuePhotographerPage.createMediaLightboxTemplate(media, this.photographer);
-
+        
         // ouverture de la lightbox
         lightbox.classList.add("open");
 
