@@ -41,14 +41,7 @@ function createListMediaTemplate(photographer) {
                    tabindex="0"></i>
             </div>
         </footer>
-        </article>
-            <aside id="card-infos" class="card-infos">
-            <div class="cards-infos__nb-likes">
-                <span id="counter-likes" class="nb-likes">${media.likes}</span>
-                <i class="fas fa-heart" aria-label="likes"></i>
-            </div>
-            <p>${photographer.price} € / jour</p>
-        </aside> `;
+        </article> `;
     });
    
 return template;

@@ -11,33 +11,39 @@ export default class Photographer {
     if (this.photographer === undefined) window.location = "index.html";
 
     this.photographer.medias = datas.media.filter(media => media.photographerId == this.photographerId);
+
+    this.photographer.likes = 0;
+    this.photographer.medias.map(m => this.photographer.likes += m.likes);
  
   }
 
   renderPhotographerPage() {
 
-    // Liste des profils
+     // Photographe Infos
     const photographersPageElement = document.getElementById("photographer-profil");
     photographersPageElement.innerHTML = vuePhotographerPage.createInfoTemplate(this.photographer);
 
-    // Liste des medias
+    // Photographe medias
     const photographersMediasElement = document.getElementById("gallery");
     photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
 
-    // Liste des likes 
+    // Photographe Price
+    document.getElementById("photographerPrice").innerHTML = this.photographer.price;
+
+    // Photographe Likes
     const photographerLike = document.querySelectorAll(".media__infos__likes_icon");
-    let photographerCompteur = document.getElementById("counter-likes");
-    let likes = document.querySelector(".media__infos__like-nb");
-    
-    let compteur = "";
+    const likes = document.getElementById("counter-likes");
+
+    likes.innerHTML = this.photographer.likes;
+
     for (let i = 0; i < photographerLike.length; i++) {
         photographerLike[i].addEventListener("click", () => {
-           compteur =  this.photographer.medias[0].likes++;
-            console.log(compteur)
-            likes.innerHTML = compteur;
-        });
-    }
-    
+            this.photographer.likes++;
+            likes.innerHTML = this.photographer.likes;
+            photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
+          });
+      }
+
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
       link.addEventListener("click", () => {
