@@ -1,6 +1,6 @@
 import vuePhotographerPage from "./components/vuePhotographerPage.js";
 import contactForm from "./components/contactForm.js";
-import likes from "./components/likes.js";
+
 
 export default class Photographer {
   constructor(datas) {
@@ -44,6 +44,44 @@ export default class Photographer {
           });
       }
 
+    // gestion des filtres de trie par catégorie
+    const filter = document.getElementById("filter-btn");
+    const filterList = document.getElementById('filter-list');
+    const popularity = document.getElementById('Popularite');
+    const day = document.getElementById('Date');
+    const title = document.getElementById('Titre');
+
+    // Affichage par popularité
+        popularity.addEventListener("click", () => {
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            console.log("hello")
+        });
+
+    // Affichage par date de publication
+        day.addEventListener("click", () => {
+            this.photographer.medias.sort((a,b) => {
+                return new Date(b.date) - new Date(a.date)
+              });
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+        });
+
+    // Affichage par titre    
+        title.addEventListener("click", () => {
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            console.log("oui et toi")
+        });
+    
+    // Ouverture du bouton de trie
+        filter.addEventListener("click", () => {
+        filterList.classList.toggle("open");
+         });
+        
+    // Fermeture du bouton de trie
+        filterList.addEventListener("click", () => {
+        filterList.classList.remove("open");
+        });  
+
+    // Photographe Lightbox
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -82,20 +120,6 @@ export default class Photographer {
 
       });
       
-    });
-
-   // gestion des filtres de trie par catégorie
-   const filter = document.getElementById("filter-btn");
-   const filterList = document.getElementById('filter-list');
-  
-   // Ouverture du bouton de trie
-   filter.addEventListener("click", () => {
-        filterList.style.display = "block";
-   });
-    
-   // Fermeture du bouton de trie
-   filterList.addEventListener("click", () => {
-        filterList.style.display = "none";
     });
 
     // Initialisation de la modal de contact

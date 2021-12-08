@@ -1,5 +1,4 @@
 import vueTag from './vueTag.js'
-import likes from './likes.js'
 
 // Renvoi le template de la page profil
 function createInfoTemplate(photographer) {
