@@ -49,12 +49,12 @@ export default class Photographer {
     const filterList = document.getElementById('filter-list');
     const popularity = document.getElementById('Popularite');
     const day = document.getElementById('Date');
-    const title = document.getElementById('Titre');
+    const titles = document.getElementById('Titre');
 
     // Affichage par popularité
         popularity.addEventListener("click", () => {
+            this.photographer.medias.sort((a, b) => (b.likes || Number.MAX_VALUE) - (a.likes || Number.MAX_VALUE));
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
-            console.log("hello")
         });
 
     // Affichage par date de publication
@@ -66,9 +66,15 @@ export default class Photographer {
         });
 
     // Affichage par titre    
-        title.addEventListener("click", () => {
+        titles.addEventListener("click", () => {
+            this.photographer.medias.sort(function compare (a, b) {
+                if (a.title < b.title)
+                return -1;
+                if (a.title > b.title)
+                return 1;
+                return 0;
+            });
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
-            console.log("oui et toi")
         });
     
     // Ouverture du bouton de trie
