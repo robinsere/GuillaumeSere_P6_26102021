@@ -408,6 +408,14 @@ a {
   cursor: pointer;
 }
 
+.media__infos__likes_icon.check{
+   background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    background-color: #901C1C;
+  }
+
 @media screen and (max-width: 950px) {
   .card-infos {
     position: fixed;

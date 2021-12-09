@@ -36,8 +36,10 @@ export default class Photographer {
 
     likes.innerHTML = this.photographer.likes;
 
-    for (let i = 0; i < photographerLike.length; i++) {
+    // Incrémentation des likes
+    for (let i = 0; i < photographerLike.length; i++){
         photographerLike[i].addEventListener("click", () => {
+            photographerLike[i].classList.add("check");
             this.photographer.likes++;
             likes.innerHTML = this.photographer.likes;
             photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
