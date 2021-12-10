@@ -61,6 +61,7 @@ export default class Photographer {
 
     // Affichage par date de publication
         day.addEventListener("click", () => {
+            filter.textContent = " Date";
             this.photographer.medias.sort((a,b) => {
                 return new Date(b.date) - new Date(a.date)
               });
@@ -69,6 +70,7 @@ export default class Photographer {
 
     // Affichage par titre    
         titles.addEventListener("click", () => {
+            filter.textContent = "Titre";
             this.photographer.medias.sort(function compare (a, b) {
                 if (a.title < b.title)
                 return -1;
