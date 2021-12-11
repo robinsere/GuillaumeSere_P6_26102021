@@ -32,19 +32,22 @@ export default class Photographer {
 
     // Photographe Likes
     const photographerLike = document.querySelectorAll(".media__infos__likes_icon");
+    const compteur = document.getElementsByClassName("media__infos__like-nb");
     const likes = document.getElementById("counter-likes");
 
     likes.innerHTML = this.photographer.likes;
 
     // Incrémentation des likes
-    for (let i = 0; i < photographerLike.length; i++){
+    for (let i = 0; i < compteur.length; i++){
         photographerLike[i].addEventListener("click", () => {
-            photographerLike[i].classList.add("check");
+            photographerLike[i].classList.toggle("check");
             this.photographer.likes++;
             likes.innerHTML = this.photographer.likes;
             photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
+            console.log(compteur.length)
+            console.log(photographerLike[i].parentElement)
           });
-      }
+      }  
 
     // gestion des filtres de trie par catégorie
     const filter = document.getElementById("filter-btn");
@@ -55,6 +58,7 @@ export default class Photographer {
 
     // Affichage par popularité
         popularity.addEventListener("click", () => {
+            filter.textContent = "Popularité";
             this.photographer.medias.sort((a, b) => (b.likes || Number.MAX_VALUE) - (a.likes || Number.MAX_VALUE));
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
         });
