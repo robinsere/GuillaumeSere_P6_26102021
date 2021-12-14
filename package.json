@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021/issues"
   },
-  "homepage": "https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021#readme"
+  "homepage": "https://github.com/GuillaumeSere/GuillaumeSere_P6_26102021#readme",
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  }
 }
