@@ -32,20 +32,25 @@ export default class Photographer {
 
     // Photographe Likes
     const photographerLike = document.querySelectorAll(".media__infos__likes_icon");
-    const compteur = document.getElementsByClassName("media__infos__like-nb");
     const likes = document.getElementById("counter-likes");
 
     likes.innerHTML = this.photographer.likes;
 
     // Incrémentation des likes
-    for (let i = 0; i < compteur.length; i++){
+    const checks = [];
+    for (let i = 0; i < photographerLike.length; i++){
         photographerLike[i].addEventListener("click", () => {
-            photographerLike[i].classList.toggle("check");
-            this.photographer.likes++;
+           if (photographerLike[i].classList.toggle("check")){
+               const check = {...photographerLike[i], likes: photographerLike[i] +1}
+               checks.push(check)
+               this.photographer.likes ++;
+               likes.innerHTML = this.photographer.likes;
+               photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
+           }else {
+            this.photographer.likes --;
             likes.innerHTML = this.photographer.likes;
-            photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
-            console.log(compteur.length)
-            console.log(photographerLike[i].parentElement)
+            photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML --;
+           }
           });
       }  
 
