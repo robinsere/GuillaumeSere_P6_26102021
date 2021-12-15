@@ -16,7 +16,7 @@ function createInfoTemplate(photographer) {
         `;
 
     return template;
-    };
+    }
    
 // Renvoi la liste des médias selon le profil
 function createListMediaTemplate(photographer) {
@@ -44,7 +44,7 @@ function createListMediaTemplate(photographer) {
     });
    
 return template;
-};
+}
 
 //Renvoi une vidéo ou une image dans le template
 function createMediaLightboxTemplate(media, photographer) {

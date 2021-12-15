@@ -51,7 +51,7 @@ export default class Photographer {
             likes.innerHTML = this.photographer.likes;
             photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML --;
            }
-          });
+          })
       }  
 
     // gestion des filtres de trie par catégorie
@@ -60,12 +60,26 @@ export default class Photographer {
     const popularity = document.getElementById('Popularite');
     const day = document.getElementById('Date');
     const titles = document.getElementById('Titre');
+      
+    // Ouverture du bouton de trie
+    filter.addEventListener("click", () => {
+        filterList.classList.toggle("open");
+         });
+        
+    // Fermeture du bouton de trie
+    filterList.addEventListener("click", () => {
+        filterList.classList.remove("open");
+        });  
 
     // Affichage par popularité
         popularity.addEventListener("click", () => {
             filter.textContent = "Popularité";
             this.photographer.medias.sort((a, b) => (b.likes || Number.MAX_VALUE) - (a.likes || Number.MAX_VALUE));
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
         });
 
     // Affichage par date de publication
@@ -75,6 +89,10 @@ export default class Photographer {
                 return new Date(b.date) - new Date(a.date)
               });
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
         });
 
     // Affichage par titre    
@@ -88,17 +106,11 @@ export default class Photographer {
                 return 0;
             });
             photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
         });
-    
-    // Ouverture du bouton de trie
-        filter.addEventListener("click", () => {
-        filterList.classList.toggle("open");
-         });
-        
-    // Fermeture du bouton de trie
-        filterList.addEventListener("click", () => {
-        filterList.classList.remove("open");
-        });  
 
     // Photographe Lightbox
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
