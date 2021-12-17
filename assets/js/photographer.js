@@ -14,7 +14,7 @@ export default class Photographer {
 
     this.photographer.likes = 0;
     this.photographer.medias.map(m => this.photographer.likes += m.likes);
- 
+
   }
 
   renderPhotographerPage() {

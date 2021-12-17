@@ -42,7 +42,6 @@ function createListMediaTemplate(photographer) {
         </footer>
         </article> `;
     });
-   
 return template;
 }
 

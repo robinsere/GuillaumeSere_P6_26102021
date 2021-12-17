@@ -21,11 +21,13 @@ export default class HomePage {
         tag.addEventListener("click", () => {
           // Filtre les photographes qui contiennent le tag selectionné
           const photographersSel = this.datas.photographers.filter(
-            (photographer) => photographer.tags.indexOf(tag.dataset.value) !== -1
-          );
+              (photographer) => photographer.tags.indexOf(tag.dataset.value) !== -1);
+                tag.classList.toggle('active');
           // Liste des profils filtrés
           photographersListElement.innerHTML = vuePhotographersList.createListTemplate(photographersSel);
         });
+     
       });
+       
   }
-}
+}  
