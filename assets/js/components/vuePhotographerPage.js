@@ -65,7 +65,6 @@ function createMediaLightboxTemplate(media, photographer) {
     return template;
 }
 
-
 export default {
     createInfoTemplate,
     createListMediaTemplate,

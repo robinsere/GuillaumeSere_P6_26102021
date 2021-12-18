@@ -227,8 +227,19 @@ a {
     height: 200px;
   }
 }
+[data-toggle='on'] {
+    display:block;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  [data-toggle='off'] {
+    display:none;
+  }
 
 .photographer__btn {
+  bottom: 0;
+  margin-bottom: 50px;
   z-index: 1;
   position: fixed;
   left: 50%;
@@ -238,6 +249,7 @@ a {
 
 @media screen and (min-width: 950px) {
   .photographer__btn {
+    bottom: initial;
     position: absolute;
     margin-top: -190px;
     z-index: 0;

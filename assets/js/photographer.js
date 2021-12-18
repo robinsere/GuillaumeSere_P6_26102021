@@ -62,14 +62,14 @@ export default class Photographer {
     const titles = document.getElementById('Titre');
       
     // Ouverture du bouton de trie
-    filter.addEventListener("click", () => {
-        filterList.classList.toggle("open");
-         });
+        filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
         
     // Fermeture du bouton de trie
-    filterList.addEventListener("click", () => {
-        filterList.classList.remove("open");
-        });  
+        filterList.addEventListener("click", () => {
+            filterList.classList.remove("open");
+            });  
 
     // Affichage par popularité
         popularity.addEventListener("click", () => {
