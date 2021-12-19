@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <script src="app.js" type="module"></script>
@@ -23,7 +24,7 @@
 
     </header>
 
-    <main class="main">
+    <main class="main" id="main">
         <section id="photographer-profil" class="photographer-profil" >
         </section>
         <button id="contact-btn" class="btn photographer__btn" data-modal="modal_inscription">Contactez-moi</button>
@@ -41,11 +42,11 @@
             <div class="filter">
                 <span id="filter-label" class="filter__label">Trier par</span>
                 <div id="filter-wrapper" class="filter__wrapper">
-                    <button id="filter-btn" class="btn filter-btn" arira-expended="false" aria-haspopup="listbox"
+                    <button id="filter-btn" class="btn filter-btn active" arira-expended="false" aria-haspopup="listbox"
                         aria-labelledby="filter-label">Popularité</button>
                     <ul id="filter-list" class="filter-list" role="listbox" aria-activedescendant="popularity"
                         aria-selected="true" aria-labelledby="filter-label">
-                        <li id="Popularité" class="filter-list__item" data-value="popularity" tabindex="0"
+                        <li id="Popularite" class="filter-list__item" data-value="popularity" tabindex="0"
                             role="button">Popularité</li>
                         <li id="Date" class="filter-list__item" data-value="date" tabindex="0" role="button">Date</li>
                         <li id="Titre" class="filter-list__item" data-value="title" tabindex="0" role="button">Titre
@@ -55,14 +56,15 @@
             </div>
         </div>
 
-        <article id="gallery" class="gallery"></article>
-        <aside id="card-infos" class="card-infos">
-            <div class="cards-infos__nb-likes">
-                <span id="counter-likes" class="nb-likes"></span>
-                <i class="fas fa-heart" aria-label="likes"></i>
-            </div>
-            <p><span id="photographerPrice"></span> € / jour</p>
-        </aside> 
+      
+            <article id="gallery" class="gallery"></article>
+            <aside id="card-infos" class="card-infos">
+                <div class="cards-infos__nb-likes">
+                    <span id="counter-likes" class="nb-likes"></span>
+                    <i class="fas fa-heart" aria-label="likes"></i>
+                </div>
+                <p><span id="photographerPrice"></span> € / jour</p>
+            </aside> 
     </main>
 
     <aside id="modal-lightbox" class="lightbox" tabindex="0" aria-label="Vue rapproché">

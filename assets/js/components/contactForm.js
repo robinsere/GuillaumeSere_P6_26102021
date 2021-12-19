@@ -9,7 +9,7 @@ const contactForm = {
             this.modalLink.forEach(link => {
                 // Récupère id de la modal
                 let mid = link.dataset.modal;
-                console.log(mid);
+              
                 // stock la modal dans un tableau
                 this.modal[mid] = document.getElementById(mid);
                 if (this.modal[mid] === null) {
@@ -54,7 +54,6 @@ const contactForm = {
         onSubmit(event) {
             event.preventDefault();
             contactForm.form_inscription.validateInputs();
-            console.log("form", contactForm.form_inscription);
             // Submit faill
             if (contactForm.form_inscription.error) {
                

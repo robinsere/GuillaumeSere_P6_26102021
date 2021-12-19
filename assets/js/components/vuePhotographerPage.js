@@ -1,5 +1,4 @@
 import vueTag from './vueTag.js'
-import likes from './likes.js'
 
 // Renvoi le template de la page profil
 function createInfoTemplate(photographer) {
@@ -17,7 +16,7 @@ function createInfoTemplate(photographer) {
         `;
 
     return template;
-    };
+    }
    
 // Renvoi la liste des médias selon le profil
 function createListMediaTemplate(photographer) {
@@ -37,15 +36,14 @@ function createListMediaTemplate(photographer) {
             <p class="media__infos__title">${media.title}</p>
             <div class="media__infos__likes">
                 <span class="media__infos__like-nb">${media.likes}</span>
-                <i class="far fa-heart media__infos__likes_icon" aria-label="likes" role="button"
+                <i class="far fa-heart media__infos__likes_icon" aria-disabled="false" aria-label="likes" role="button"
                    tabindex="0"></i>
             </div>
         </footer>
-        </article>`;
+        </article> `;
     });
-   
 return template;
-};
+}
 
 //Renvoi une vidéo ou une image dans le template
 function createMediaLightboxTemplate(media, photographer) {
@@ -67,10 +65,8 @@ function createMediaLightboxTemplate(media, photographer) {
     return template;
 }
 
-
 export default {
     createInfoTemplate,
     createListMediaTemplate,
     createMediaLightboxTemplate,
 }
-

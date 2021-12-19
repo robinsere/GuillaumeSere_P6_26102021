@@ -1,6 +1,6 @@
 import vuePhotographerPage from "./components/vuePhotographerPage.js";
 import contactForm from "./components/contactForm.js";
-import likes from "./components/likes.js";
+
 
 export default class Photographer {
   constructor(datas) {
@@ -11,13 +11,15 @@ export default class Photographer {
     if (this.photographer === undefined) window.location = "index.html";
 
     this.photographer.medias = datas.media.filter(media => media.photographerId == this.photographerId);
+
     this.photographer.likes = 0;
     this.photographer.medias.map(m => this.photographer.likes += m.likes);
+
   }
 
   renderPhotographerPage() {
 
-    // Photographe Infos
+     // Photographe Infos
     const photographersPageElement = document.getElementById("photographer-profil");
     photographersPageElement.innerHTML = vuePhotographerPage.createInfoTemplate(this.photographer);
 
@@ -31,17 +33,86 @@ export default class Photographer {
     // Photographe Likes
     const photographerLike = document.querySelectorAll(".media__infos__likes_icon");
     const likes = document.getElementById("counter-likes");
-    
+
     likes.innerHTML = this.photographer.likes;
-    
-    for (let i = 0; i < photographerLike.length; i++) {
+
+    // Incrémentation des likes
+    const checks = [];
+    for (let i = 0; i < photographerLike.length; i++){
         photographerLike[i].addEventListener("click", () => {
-          this.photographer.likes++;
-          likes.innerHTML = this.photographer.likes;
-          photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
+           if (photographerLike[i].classList.toggle("check")){
+               const check = {...photographerLike[i], likes: photographerLike[i] +1}
+               checks.push(check)
+               this.photographer.likes ++;
+               likes.innerHTML = this.photographer.likes;
+               photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML ++;
+           }else {
+            this.photographer.likes --;
+            likes.innerHTML = this.photographer.likes;
+            photographerLike[i].parentElement.querySelector(".media__infos__like-nb").innerHTML --;
+           }
+          })
+      }  
+
+    // gestion des filtres de trie par catégorie
+    const filter = document.getElementById("filter-btn");
+    const filterList = document.getElementById('filter-list');
+    const popularity = document.getElementById('Popularite');
+    const day = document.getElementById('Date');
+    const titles = document.getElementById('Titre');
+      
+    // Ouverture du bouton de trie
+        filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+        
+    // Fermeture du bouton de trie
+        filterList.addEventListener("click", () => {
+            filterList.classList.remove("open");
+            });  
+
+    // Affichage par popularité
+        popularity.addEventListener("click", () => {
+            filter.textContent = "Popularité";
+            this.photographer.medias.sort((a, b) => (b.likes || Number.MAX_VALUE) - (a.likes || Number.MAX_VALUE));
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
         });
-    }
-    
+
+    // Affichage par date de publication
+        day.addEventListener("click", () => {
+            filter.textContent = " Date";
+            this.photographer.medias.sort((a,b) => {
+                return new Date(b.date) - new Date(a.date)
+              });
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
+        });
+
+    // Affichage par titre    
+        titles.addEventListener("click", () => {
+            filter.textContent = "Titre";
+            this.photographer.medias.sort(function compare (a, b) {
+                if (a.title < b.title)
+                return -1;
+                if (a.title > b.title)
+                return 1;
+                return 0;
+            });
+            photographersMediasElement.innerHTML = vuePhotographerPage.createListMediaTemplate(this.photographer);
+            filter.addEventListener("click", () => {
+            filterList.classList.toggle("open");
+            });
+            this.renderPhotographerPage();
+        });
+
+    // Photographe Lightbox
     const mediaLinks = photographersMediasElement.querySelectorAll(".media__link");
     mediaLinks.forEach(link => {
       link.addEventListener("click", () => {
@@ -62,7 +133,7 @@ export default class Photographer {
         });
         
          //  pagination de la lightbox
-        document.querySelector(".arrow-left").addEventListener('click', () => {
+         document.querySelector(".arrow-left").addEventListener('click', () => {
             if (link.dataset.index == 0) {
               link.dataset.index = this.photographer.medias.length;
             }
@@ -80,20 +151,6 @@ export default class Photographer {
 
       });
       
-    });
-
-   // gestion des filtres de trie par catégorie
-   const filter = document.getElementById("filter-btn");
-   const filterList = document.getElementById('filter-list');
-  
-   // Ouverture du bouton de trie
-   filter.addEventListener("click", () => {
-        filterList.style.display = "block";
-   });
-    
-   // Fermeture du bouton de trie
-   filterList.addEventListener("click", () => {
-        filterList.style.display = "none";
     });
 
     // Initialisation de la modal de contact
